@@ -1,0 +1,11 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Border Radius Tokens",
+  "radius": {
+    "none": { "$value": "#TODO", "$type": "dimension", "$description": "0px — 直角" },
+    "sm": { "$value": "#TODO", "$type": "dimension", "$description": "小圆角" },
+    "md": { "$value": "#TODO", "$type": "dimension", "$description": "中等圆角" },
+    "lg": { "$value": "#TODO", "$type": "dimension", "$description": "大圆角" },
+    "full": { "$value": "#TODO", "$type": "dimension", "$description": "完全圆形" }
+  }
+}

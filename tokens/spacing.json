@@ -1,0 +1,17 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Spacing Tokens (4px base grid)",
+  "spacing": {
+    "0": { "$value": "#TODO", "$type": "dimension", "$description": "0px" },
+    "1": { "$value": "#TODO", "$type": "dimension", "$description": "4px" },
+    "2": { "$value": "#TODO", "$type": "dimension", "$description": "8px" },
+    "3": { "$value": "#TODO", "$type": "dimension", "$description": "12px" },
+    "4": { "$value": "#TODO", "$type": "dimension", "$description": "16px" },
+    "6": { "$value": "#TODO", "$type": "dimension", "$description": "24px" },
+    "8": { "$value": "#TODO", "$type": "dimension", "$description": "32px" },
+    "12": { "$value": "#TODO", "$type": "dimension", "$description": "48px" },
+    "16": { "$value": "#TODO", "$type": "dimension", "$description": "64px" },
+    "24": { "$value": "#TODO", "$type": "dimension", "$description": "96px" },
+    "32": { "$value": "#TODO", "$type": "dimension", "$description": "128px" }
+  }
+}

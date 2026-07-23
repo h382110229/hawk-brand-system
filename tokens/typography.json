@@ -1,0 +1,52 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Typography Tokens",
+  "fontFamily": {
+    "logo": {
+      "$value": "#TODO",
+      "$type": "fontFamily",
+      "$description": "Logo / Display — 几何无衬线，直线感（定制/手工调整）"
+    },
+    "heading": {
+      "$value": "Inter, Plus Jakarta Sans, sans-serif",
+      "$type": "fontFamily",
+      "$description": "标题 — 中等字重无衬线"
+    },
+    "body": {
+      "$value": "Inter, IBM Plex Sans, sans-serif",
+      "$type": "fontFamily",
+      "$description": "正文 — 高可读无衬线"
+    },
+    "code": {
+      "$value": "JetBrains Mono, Fira Code, monospace",
+      "$type": "fontFamily",
+      "$description": "代码 — 等宽"
+    }
+  },
+  "fontSize": {
+    "xs": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "sm": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "base": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "lg": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "xl": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "2xl": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "3xl": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "4xl": { "$value": "#TODO", "$type": "dimension", "$description": "" }
+  },
+  "fontWeight": {
+    "regular": { "$value": "#TODO", "$type": "fontWeight", "$description": "" },
+    "medium": { "$value": "#TODO", "$type": "fontWeight", "$description": "" },
+    "semibold": { "$value": "#TODO", "$type": "fontWeight", "$description": "" },
+    "bold": { "$value": "#TODO", "$type": "fontWeight", "$description": "" }
+  },
+  "lineHeight": {
+    "tight": { "$value": "#TODO", "$type": "number", "$description": "" },
+    "normal": { "$value": "#TODO", "$type": "number", "$description": "" },
+    "relaxed": { "$value": "#TODO", "$type": "number", "$description": "" }
+  },
+  "letterSpacing": {
+    "tight": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "normal": { "$value": "#TODO", "$type": "dimension", "$description": "" },
+    "wide": { "$value": "#TODO", "$type": "dimension", "$description": "" }
+  }
+}

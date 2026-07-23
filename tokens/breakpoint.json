@@ -1,0 +1,11 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Responsive Breakpoint Tokens",
+  "breakpoint": {
+    "sm": { "$value": "#TODO", "$type": "dimension", "$description": "手机竖屏" },
+    "md": { "$value": "#TODO", "$type": "dimension", "$description": "手机横屏 / 小平板" },
+    "lg": { "$value": "#TODO", "$type": "dimension", "$description": "平板" },
+    "xl": { "$value": "#TODO", "$type": "dimension", "$description": "笔记本" },
+    "2xl": { "$value": "#TODO", "$type": "dimension", "$description": "桌面" }
+  }
+}

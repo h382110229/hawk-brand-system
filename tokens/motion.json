@@ -1,0 +1,16 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Motion / Animation Tokens",
+  "duration": {
+    "instant": { "$value": "#TODO", "$type": "duration", "$description": "" },
+    "fast": { "$value": "#TODO", "$type": "duration", "$description": "" },
+    "normal": { "$value": "#TODO", "$type": "duration", "$description": "" },
+    "slow": { "$value": "#TODO", "$type": "duration", "$description": "" }
+  },
+  "easing": {
+    "default": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" },
+    "in": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" },
+    "out": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" },
+    "in-out": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" }
+  }
+}

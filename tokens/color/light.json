@@ -1,0 +1,107 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Light Mode Color Tokens",
+  "mode": "light",
+  "color": {
+    "brand": {
+      "primary": {
+        "$value": "#4285F4",
+        "$type": "color",
+        "$description": "Hawk Blue — 主品牌色、Logo、链接、按钮"
+      },
+      "primary-light": {
+        "$value": "#669DF6",
+        "$type": "color",
+        "$description": "Hover 状态"
+      },
+      "primary-dark": {
+        "$value": "#1A73E8",
+        "$type": "color",
+        "$description": "按下状态"
+      },
+      "accent-red": {
+        "$value": "#EA4335",
+        "$type": "color",
+        "$description": "辅助强调（可选）"
+      },
+      "accent-yellow": {
+        "$value": "#FBBC05",
+        "$type": "color",
+        "$description": "辅助强调（可选）"
+      },
+      "accent-green": {
+        "$value": "#34A853",
+        "$type": "color",
+        "$description": "辅助强调（可选）"
+      }
+    },
+    "background": {
+      "primary": {
+        "$value": "#FFFFFF",
+        "$type": "color",
+        "$description": "主背景"
+      },
+      "secondary": {
+        "$value": "#F8F9FA",
+        "$type": "color",
+        "$description": "卡片背景"
+      },
+      "tertiary": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "悬浮 / 弹窗背景"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "#202124",
+        "$type": "color",
+        "$description": "主文字"
+      },
+      "secondary": {
+        "$value": "#5F6368",
+        "$type": "color",
+        "$description": "次要文字"
+      },
+      "disabled": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "禁用状态文字"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "默认边框"
+      },
+      "focus": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "聚焦状态边框"
+      }
+    },
+    "semantic": {
+      "success": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "成功状态"
+      },
+      "warning": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "警告状态"
+      },
+      "error": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "错误状态"
+      },
+      "info": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "信息状态"
+      }
+    }
+  }
+}

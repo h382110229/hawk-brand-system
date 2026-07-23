@@ -1,0 +1,92 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "HAWK Design System — Dark Mode Color Tokens",
+  "mode": "dark",
+  "color": {
+    "brand": {
+      "primary": {
+        "$value": "#D4AF37",
+        "$type": "color",
+        "$description": "Hawk Gold — 主品牌色、Logo、重点强调"
+      },
+      "primary-light": {
+        "$value": "#E8D48B",
+        "$type": "color",
+        "$description": "Hover / 高亮状态"
+      },
+      "primary-dark": {
+        "$value": "#B8941E",
+        "$type": "color",
+        "$description": "按下 / 深层状态"
+      }
+    },
+    "background": {
+      "primary": {
+        "$value": "#0A0A0A",
+        "$type": "color",
+        "$description": "主背景"
+      },
+      "secondary": {
+        "$value": "#141414",
+        "$type": "color",
+        "$description": "卡片 / 面板背景"
+      },
+      "tertiary": {
+        "$value": "#1E1E1E",
+        "$type": "color",
+        "$description": "悬浮 / 弹窗背景"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "#EAEAEA",
+        "$type": "color",
+        "$description": "主文字"
+      },
+      "secondary": {
+        "$value": "#A0A0A0",
+        "$type": "color",
+        "$description": "次要文字"
+      },
+      "disabled": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "禁用状态文字"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "默认边框"
+      },
+      "focus": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "聚焦状态边框"
+      }
+    },
+    "semantic": {
+      "success": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "成功状态"
+      },
+      "warning": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "警告状态"
+      },
+      "error": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "错误状态"
+      },
+      "info": {
+        "$value": "#TODO",
+        "$type": "color",
+        "$description": "信息状态"
+      }
+    }
+  }
+}
