@@ -3,11 +3,12 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-// Mock Next.js Image
+// Mock Next.js Image — strip Next-specific props like `priority` that aren't valid on <img>
 vi.mock("next/image", () => ({
-  default: (props: any) => {
+  default: (props: Record<string, unknown>) => {
+    const { priority: _p, ...imgProps } = props; // eslint-disable-line @typescript-eslint/no-unused-vars
     // eslint-disable-next-line @next/next/no-img-element
-    return <img {...props} alt={props.alt} />;
+    return <img {...imgProps} alt={imgProps.alt as string} />;
   },
 }));
 
@@ -71,9 +72,9 @@ describe("Homepage", () => {
 
   it("renders theme toggle buttons", () => {
     renderHome();
-    expect(screen.getByLabelText("Switch to Light mode")).toBeInTheDocument();
-    expect(screen.getByLabelText("Switch to Dark mode")).toBeInTheDocument();
-    expect(screen.getByLabelText("Switch to System mode")).toBeInTheDocument();
+    expect(screen.getByLabelText(/Light mode/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Dark mode/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/System mode/)).toBeInTheDocument();
   });
 
   it("renders logo system section", () => {

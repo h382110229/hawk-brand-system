@@ -4,26 +4,49 @@ import * as path from "path";
 
 const TOKENS_DIR = path.resolve(__dirname, "../../tokens");
 
-function readJson(file: string) {
+interface TokenValue {
+  $value: string | number;
+  $type: string;
+  $description?: string;
+}
+
+interface TokenGroup {
+  [key: string]: TokenValue | TokenGroup;
+}
+
+function readJson(file: string): TokenGroup {
   return JSON.parse(fs.readFileSync(path.join(TOKENS_DIR, file), "utf-8"));
 }
 
-function findTodoValues(obj: any, p = ""): string[] {
+function findTodoValues(obj: TokenGroup, p = ""): string[] {
   const errors: string[] = [];
   for (const [key, value] of Object.entries(obj)) {
     if (key.startsWith("$")) continue;
     const fp = p ? `${p}.${key}` : key;
     if (typeof value === "object" && value !== null) {
       if ("$value" in value) {
-        if (String((value as any).$value).includes("#TODO")) {
+        if (String((value as TokenValue).$value).includes("#TODO")) {
           errors.push(fp);
         }
       } else {
-        errors.push(...findTodoValues(value, fp));
+        errors.push(...findTodoValues(value as TokenGroup, fp));
       }
     }
   }
   return errors;
+}
+
+function checkColors(obj: TokenGroup): void {
+  const hex = /^#[0-9A-Fa-f]{6}$/;
+  for (const [, value] of Object.entries(obj)) {
+    if (typeof value === "object" && value !== null) {
+      if ("$value" in value && (value as TokenValue).$type === "color") {
+        expect(String((value as TokenValue).$value)).toMatch(hex);
+      } else if (!("$value" in value)) {
+        checkColors(value as TokenGroup);
+      }
+    }
+  }
 }
 
 describe("Token validation", () => {
@@ -46,56 +69,39 @@ describe("Token validation", () => {
 
   it("dark colors have valid hex format", () => {
     const data = readJson("color/dark.json");
-    const hex = /^#[0-9A-Fa-f]{6}$/;
-
-    function checkColors(obj: any) {
-      for (const [, value] of Object.entries(obj)) {
-        if (typeof value === "object" && value !== null) {
-          if ("$value" in value && (value as any).$type === "color") {
-            expect((value as any).$value).toMatch(hex);
-          } else if (!("$value" in value)) {
-            checkColors(value);
-          }
-        }
-      }
-    }
-    checkColors(data.color);
+    const colorGroup = data.color as TokenGroup;
+    checkColors(colorGroup);
   });
 
   it("light colors have valid hex format", () => {
     const data = readJson("color/light.json");
-    const hex = /^#[0-9A-Fa-f]{6}$/;
-
-    function checkColors(obj: any) {
-      for (const [, value] of Object.entries(obj)) {
-        if (typeof value === "object" && value !== null) {
-          if ("$value" in value && (value as any).$type === "color") {
-            expect((value as any).$value).toMatch(hex);
-          } else if (!("$value" in value)) {
-            checkColors(value);
-          }
-        }
-      }
-    }
-    checkColors(data.color);
+    const colorGroup = data.color as TokenGroup;
+    checkColors(colorGroup);
   });
 
   it("elevation has no embossed token", () => {
     const data = readJson("elevation.json");
-    expect(data.elevation.embossed).toBeUndefined();
+    const elevationGroup = data.elevation as TokenGroup;
+    expect(elevationGroup.embossed).toBeUndefined();
   });
 
   it("spacing tokens have px units", () => {
     const data = readJson("spacing.json");
-    for (const [, token] of Object.entries(data.spacing)) {
-      expect((token as any).$value).toMatch(/px$/);
+    const spacingGroup = data.spacing as TokenGroup;
+    for (const [, token] of Object.entries(spacingGroup)) {
+      if (typeof token === "object" && token !== null && "$value" in token) {
+        expect(String((token as TokenValue).$value)).toMatch(/px$/);
+      }
     }
   });
 
   it("radius tokens have px units", () => {
     const data = readJson("radius.json");
-    for (const [, token] of Object.entries(data.radius)) {
-      expect((token as any).$value).toMatch(/px$/);
+    const radiusGroup = data.radius as TokenGroup;
+    for (const [, token] of Object.entries(radiusGroup)) {
+      if (typeof token === "object" && token !== null && "$value" in token) {
+        expect(String((token as TokenValue).$value)).toMatch(/px$/);
+      }
     }
   });
 });

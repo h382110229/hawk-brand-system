@@ -28,7 +28,7 @@ export function HawkLogo({
       width={width}
       height={height}
       className={className}
-      priority
+      priority={true}
     />
   );
 }

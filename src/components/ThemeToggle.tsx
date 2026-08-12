@@ -14,33 +14,21 @@ export function ThemeToggle() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        gap: "4px",
-        padding: "4px",
-        borderRadius: "var(--radius-full)",
-        background: "var(--background-secondary)",
-        border: "1px solid var(--border-default)",
-      }}
+      className="flex gap-1 p-1 rounded-[var(--radius-full)] bg-[var(--background-secondary)] border border-[var(--border-default)]"
+      role="group"
+      aria-label="Theme selection"
     >
       {options.map((opt) => (
         <button
           key={opt.value}
           onClick={() => setTheme(opt.value)}
-          aria-label={`Switch to ${opt.label} mode`}
-          style={{
-            padding: "6px 12px",
-            borderRadius: "var(--radius-full)",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "var(--fontSize-sm)",
-            background:
-              theme === opt.value
-                ? "var(--background-tertiary)"
-                : "transparent",
-            color: "var(--text-primary)",
-            transition: "background var(--duration-normal) var(--easing-default)",
-          }}
+          aria-pressed={theme === opt.value}
+          aria-label={`${opt.label} mode${theme === opt.value ? " (active)" : ""}`}
+          className={`px-3 py-1.5 rounded-[var(--radius-full)] border-none cursor-pointer text-[var(--fontSize-sm)] text-[var(--text-primary)] transition-all duration-[var(--duration-normal)] ease-[var(--easing-default)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-primary)] ${
+            theme === opt.value
+              ? "bg-[var(--background-tertiary)]"
+              : "bg-transparent hover:bg-[var(--background-tertiary)]"
+          }`}
         >
           {opt.icon} {opt.label}
         </button>

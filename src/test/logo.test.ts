@@ -58,9 +58,14 @@ describe("Logo SVG validation", () => {
     expect(content).toContain("M720 220");
   });
 
-  it("icon only has H monogram path", () => {
+  it("icon has HAWK monogram (not just H path)", () => {
     const content = fs.readFileSync(path.join(LOGO_DIR, "dark/icon.svg"), "utf-8");
-    expect(content).toContain("M252 220V720");
+    // Icon should contain HAWK monogram paths (H, A, W, K)
+    expect(content).toContain("M252 220V804"); // H vertical
+    expect(content).toContain("M252 512H448"); // H crossbar
+    expect(content).toContain("M360 580L448 220"); // A peak
+    expect(content).toContain("M300 580L380 804"); // W
+    expect(content).toContain("M536 220V804"); // K vertical
     // Icon should NOT contain wordmark
     expect(content).not.toContain("M226 810");
   });
