@@ -14,7 +14,7 @@ export function ThemeToggle() {
 
   return (
     <div
-      className="flex gap-1 p-1 rounded-[var(--radius-full)] bg-[var(--background-secondary)] border border-[var(--border-default)]"
+      className="flex gap-1 p-1 rounded-[var(--radius-full)] bg-[var(--color-background-secondary)] border border-[var(--color-border-default)]"
       role="group"
       aria-label="Theme selection"
     >
@@ -24,10 +24,10 @@ export function ThemeToggle() {
           onClick={() => setTheme(opt.value)}
           aria-pressed={theme === opt.value}
           aria-label={`${opt.label} mode${theme === opt.value ? " (active)" : ""}`}
-          className={`px-3 py-1.5 rounded-[var(--radius-full)] border-none cursor-pointer text-[var(--fontSize-sm)] text-[var(--text-primary)] transition-all duration-[var(--duration-normal)] ease-[var(--easing-default)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-primary)] ${
+          className={`px-3 py-1.5 rounded-[var(--radius-full)] border-none cursor-pointer text-[var(--font-size-sm)] text-[var(--color-text-primary)] transition-all duration-[var(--motion-duration-normal)] ease-[var(--motion-easing-default)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-primary)] ${
             theme === opt.value
-              ? "bg-[var(--background-tertiary)]"
-              : "bg-transparent hover:bg-[var(--background-tertiary)]"
+              ? "bg-[var(--color-background-tertiary)]"
+              : "bg-transparent hover:bg-[var(--color-background-tertiary)]"
           }`}
         >
           {opt.icon} {opt.label}

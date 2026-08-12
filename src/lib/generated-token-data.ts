@@ -10,37 +10,44 @@ export interface ColorToken {
 export interface SpacingToken {
   name: string;
   value: string;
+  cssVar: string;
 }
 
 export interface RadiusToken {
   name: string;
   value: string;
+  cssVar: string;
 }
 
 export interface ElevationToken {
   name: string;
   value: string;
+  cssVar: string;
 }
 
 export interface MotionToken {
   name: string;
   value: string;
+  cssVar: string;
 }
 
 export interface FontSizeToken {
   name: string;
   value: string;
+  cssVar: string;
 }
 
 export interface FontFamilyToken {
   name: string;
   value: string;
   desc: string;
+  cssVar: string;
 }
 
 export interface FontWeightToken {
   name: string;
   value: number;
+  cssVar: string;
 }
 
 export const COLORS_DARK: ColorToken[] = [
@@ -217,143 +224,175 @@ export const COLORS_LIGHT: ColorToken[] = [
 export const SPACING: SpacingToken[] = [
   {
     "name": "0",
-    "value": "0px"
+    "value": "0px",
+    "cssVar": "--spacing-0"
   },
   {
     "name": "1",
-    "value": "4px"
+    "value": "4px",
+    "cssVar": "--spacing-1"
   },
   {
     "name": "2",
-    "value": "8px"
+    "value": "8px",
+    "cssVar": "--spacing-2"
   },
   {
     "name": "3",
-    "value": "12px"
+    "value": "12px",
+    "cssVar": "--spacing-3"
   },
   {
     "name": "4",
-    "value": "16px"
+    "value": "16px",
+    "cssVar": "--spacing-4"
   },
   {
     "name": "6",
-    "value": "24px"
+    "value": "24px",
+    "cssVar": "--spacing-6"
   },
   {
     "name": "8",
-    "value": "32px"
+    "value": "32px",
+    "cssVar": "--spacing-8"
   },
   {
     "name": "12",
-    "value": "48px"
+    "value": "48px",
+    "cssVar": "--spacing-12"
   },
   {
     "name": "16",
-    "value": "64px"
+    "value": "64px",
+    "cssVar": "--spacing-16"
   },
   {
     "name": "24",
-    "value": "96px"
+    "value": "96px",
+    "cssVar": "--spacing-24"
   },
   {
     "name": "32",
-    "value": "128px"
+    "value": "128px",
+    "cssVar": "--spacing-32"
   }
 ];
 
 export const RADII: RadiusToken[] = [
   {
     "name": "none",
-    "value": "0px"
+    "value": "0px",
+    "cssVar": "--radius-none"
   },
   {
     "name": "sm",
-    "value": "6px"
+    "value": "6px",
+    "cssVar": "--radius-sm"
   },
   {
     "name": "md",
-    "value": "10px"
+    "value": "10px",
+    "cssVar": "--radius-md"
   },
   {
     "name": "lg",
-    "value": "16px"
+    "value": "16px",
+    "cssVar": "--radius-lg"
   },
   {
     "name": "full",
-    "value": "9999px"
+    "value": "9999px",
+    "cssVar": "--radius-full"
   }
 ];
 
 export const ELEVATIONS: ElevationToken[] = [
   {
     "name": "none",
-    "value": "none"
+    "value": "none",
+    "cssVar": "--elevation-none"
   },
   {
     "name": "low",
-    "value": "0 1px 3px rgba(0,0,0,0.08)"
+    "value": "0 1px 3px rgba(0,0,0,0.08)",
+    "cssVar": "--elevation-low"
   },
   {
     "name": "medium",
-    "value": "0 4px 12px rgba(0,0,0,0.12)"
+    "value": "0 4px 12px rgba(0,0,0,0.12)",
+    "cssVar": "--elevation-medium"
   },
   {
     "name": "high",
-    "value": "0 8px 24px rgba(0,0,0,0.16)"
+    "value": "0 8px 24px rgba(0,0,0,0.16)",
+    "cssVar": "--elevation-high"
   }
 ];
 
 export const MOTIONS: MotionToken[] = [
   {
     "name": "instant",
-    "value": "0ms"
+    "value": "0ms",
+    "cssVar": "--motion-duration-instant"
   },
   {
     "name": "fast",
-    "value": "120ms"
+    "value": "120ms",
+    "cssVar": "--motion-duration-fast"
   },
   {
     "name": "normal",
-    "value": "200ms"
+    "value": "200ms",
+    "cssVar": "--motion-duration-normal"
   },
   {
     "name": "slow",
-    "value": "320ms"
+    "value": "320ms",
+    "cssVar": "--motion-duration-slow"
   }
 ];
 
 export const FONT_SIZES: FontSizeToken[] = [
   {
     "name": "xs",
-    "value": "0.75rem"
+    "value": "0.75rem",
+    "cssVar": "--font-size-xs"
   },
   {
     "name": "sm",
-    "value": "0.875rem"
+    "value": "0.875rem",
+    "cssVar": "--font-size-sm"
   },
   {
     "name": "base",
-    "value": "1rem"
+    "value": "1rem",
+    "cssVar": "--font-size-base"
   },
   {
     "name": "lg",
-    "value": "1.125rem"
+    "value": "1.125rem",
+    "cssVar": "--font-size-lg"
   },
   {
     "name": "xl",
-    "value": "1.25rem"
+    "value": "1.25rem",
+    "cssVar": "--font-size-xl"
   },
   {
     "name": "2xl",
-    "value": "1.5rem"
+    "value": "1.5rem",
+    "cssVar": "--font-size-2xl"
   },
   {
     "name": "3xl",
-    "value": "1.875rem"
+    "value": "1.875rem",
+    "cssVar": "--font-size-3xl"
   },
   {
     "name": "4xl",
-    "value": "2.25rem"
+    "value": "2.25rem",
+    "cssVar": "--font-size-4xl"
   }
 ];
 
@@ -361,40 +400,48 @@ export const FONT_FAMILIES: FontFamilyToken[] = [
   {
     "name": "logo",
     "value": "'Plus Jakarta Sans', sans-serif",
-    "desc": "Logo / Display — 几何无衬线，直线感（定制/手工调整）"
+    "desc": "Logo / Display — 几何无衬线，直线感（定制/手工调整）",
+    "cssVar": "--font-family-logo"
   },
   {
     "name": "heading",
     "value": "'Plus Jakarta Sans', 'Inter', sans-serif",
-    "desc": "标题 — 中等字重无衬线"
+    "desc": "标题 — 中等字重无衬线",
+    "cssVar": "--font-family-heading"
   },
   {
     "name": "body",
     "value": "'Inter', sans-serif",
-    "desc": "正文 — 高可读无衬线"
+    "desc": "正文 — 高可读无衬线",
+    "cssVar": "--font-family-body"
   },
   {
     "name": "code",
     "value": "'JetBrains Mono', monospace",
-    "desc": "代码 — 等宽"
+    "desc": "代码 — 等宽",
+    "cssVar": "--font-family-code"
   }
 ];
 
 export const FONT_WEIGHTS: FontWeightToken[] = [
   {
     "name": "regular",
-    "value": 400
+    "value": 400,
+    "cssVar": "--font-weight-regular"
   },
   {
     "name": "medium",
-    "value": 500
+    "value": 500,
+    "cssVar": "--font-weight-medium"
   },
   {
     "name": "semibold",
-    "value": 600
+    "value": 600,
+    "cssVar": "--font-weight-semibold"
   },
   {
     "name": "bold",
-    "value": 700
+    "value": 700,
+    "cssVar": "--font-weight-bold"
   }
 ];
