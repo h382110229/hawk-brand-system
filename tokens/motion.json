@@ -2,15 +2,67 @@
   "$schema": "https://design-tokens.github.io/community-group/format/",
   "$description": "HAWK Design System — Motion / Animation Tokens",
   "duration": {
-    "instant": { "$value": "#TODO", "$type": "duration", "$description": "" },
-    "fast": { "$value": "#TODO", "$type": "duration", "$description": "" },
-    "normal": { "$value": "#TODO", "$type": "duration", "$description": "" },
-    "slow": { "$value": "#TODO", "$type": "duration", "$description": "" }
+    "instant": {
+      "$value": "0ms",
+      "$type": "duration",
+      "$description": ""
+    },
+    "fast": {
+      "$value": "120ms",
+      "$type": "duration",
+      "$description": ""
+    },
+    "normal": {
+      "$value": "200ms",
+      "$type": "duration",
+      "$description": ""
+    },
+    "slow": {
+      "$value": "320ms",
+      "$type": "duration",
+      "$description": ""
+    }
   },
   "easing": {
-    "default": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" },
-    "in": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" },
-    "out": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" },
-    "in-out": { "$value": "#TODO", "$type": "cubicBezier", "$description": "" }
+    "default": {
+      "$value": [
+        0.2,
+        0,
+        0,
+        1
+      ],
+      "$type": "cubicBezier",
+      "$description": ""
+    },
+    "in": {
+      "$value": [
+        0.4,
+        0,
+        1,
+        1
+      ],
+      "$type": "cubicBezier",
+      "$description": ""
+    },
+    "out": {
+      "$value": [
+        0,
+        0,
+        0.2,
+        1
+      ],
+      "$type": "cubicBezier",
+      "$description": ""
+    },
+    "in-out": {
+      "$value": [
+        0.4,
+        0,
+        0.2,
+        1
+      ],
+      "$type": "cubicBezier",
+      "$description": ""
+    }
   }
 }

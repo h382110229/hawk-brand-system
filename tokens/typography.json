@@ -3,50 +3,122 @@
   "$description": "HAWK Design System — Typography Tokens",
   "fontFamily": {
     "logo": {
-      "$value": "#TODO",
+      "$value": "'Plus Jakarta Sans', sans-serif",
       "$type": "fontFamily",
       "$description": "Logo / Display — 几何无衬线，直线感（定制/手工调整）"
     },
     "heading": {
-      "$value": "Inter, Plus Jakarta Sans, sans-serif",
+      "$value": "'Plus Jakarta Sans', 'Inter', sans-serif",
       "$type": "fontFamily",
       "$description": "标题 — 中等字重无衬线"
     },
     "body": {
-      "$value": "Inter, IBM Plex Sans, sans-serif",
+      "$value": "'Inter', sans-serif",
       "$type": "fontFamily",
       "$description": "正文 — 高可读无衬线"
     },
     "code": {
-      "$value": "JetBrains Mono, Fira Code, monospace",
+      "$value": "'JetBrains Mono', monospace",
       "$type": "fontFamily",
       "$description": "代码 — 等宽"
     }
   },
   "fontSize": {
-    "xs": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "sm": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "base": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "lg": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "xl": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "2xl": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "3xl": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "4xl": { "$value": "#TODO", "$type": "dimension", "$description": "" }
+    "xs": {
+      "$value": "0.75rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "sm": {
+      "$value": "0.875rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "base": {
+      "$value": "1rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "lg": {
+      "$value": "1.125rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "xl": {
+      "$value": "1.25rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "2xl": {
+      "$value": "1.5rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "3xl": {
+      "$value": "1.875rem",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "4xl": {
+      "$value": "2.25rem",
+      "$type": "dimension",
+      "$description": ""
+    }
   },
   "fontWeight": {
-    "regular": { "$value": "#TODO", "$type": "fontWeight", "$description": "" },
-    "medium": { "$value": "#TODO", "$type": "fontWeight", "$description": "" },
-    "semibold": { "$value": "#TODO", "$type": "fontWeight", "$description": "" },
-    "bold": { "$value": "#TODO", "$type": "fontWeight", "$description": "" }
+    "regular": {
+      "$value": 400,
+      "$type": "fontWeight",
+      "$description": ""
+    },
+    "medium": {
+      "$value": 500,
+      "$type": "fontWeight",
+      "$description": ""
+    },
+    "semibold": {
+      "$value": 600,
+      "$type": "fontWeight",
+      "$description": ""
+    },
+    "bold": {
+      "$value": 700,
+      "$type": "fontWeight",
+      "$description": ""
+    }
   },
   "lineHeight": {
-    "tight": { "$value": "#TODO", "$type": "number", "$description": "" },
-    "normal": { "$value": "#TODO", "$type": "number", "$description": "" },
-    "relaxed": { "$value": "#TODO", "$type": "number", "$description": "" }
+    "tight": {
+      "$value": 1.2,
+      "$type": "number",
+      "$description": ""
+    },
+    "normal": {
+      "$value": 1.5,
+      "$type": "number",
+      "$description": ""
+    },
+    "relaxed": {
+      "$value": 1.7,
+      "$type": "number",
+      "$description": ""
+    }
   },
   "letterSpacing": {
-    "tight": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "normal": { "$value": "#TODO", "$type": "dimension", "$description": "" },
-    "wide": { "$value": "#TODO", "$type": "dimension", "$description": "" }
+    "tight": {
+      "$value": "-0.02em",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "normal": {
+      "$value": "0em",
+      "$type": "dimension",
+      "$description": ""
+    },
+    "wide": {
+      "$value": "0.08em",
+      "$type": "dimension",
+      "$description": ""
+    }
   }
 }

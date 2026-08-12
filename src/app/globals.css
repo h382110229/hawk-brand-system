@@ -1,0 +1,33 @@
+@import "../styles/generated-tokens.css";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--fontFamily-body);
+    font-size: 16px;
+    line-height: var(--lineHeight-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fontFamily-heading);
+    font-weight: var(--fontWeight-bold);
+    line-height: var(--lineHeight-tight);
+  }
+
+  code, pre {
+    font-family: var(--fontFamily-code);
+  }
+}

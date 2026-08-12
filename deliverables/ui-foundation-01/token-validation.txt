@@ -1,0 +1,5 @@
+$ tsx scripts/check-tokens.ts
+✅ All token validations passed!
+
+$ tsx scripts/build-tokens.ts
+✅ Generated: src/styles/generated-tokens.css
