@@ -1,25 +1,27 @@
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Node
+# dependencies
 node_modules/
-npm-debug.log*
+.pnpm-store/
 
-# Build
-dist/
+# next.js
+.next/
+out/
+
+# production
 build/
 
-# Env
-.env
-.env.local
+# env files
+.env*.local
 
-# Temp
-*.tmp
-*.log
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# os
+.DS_Store
+
+# ide
+.vscode/
+.idea/

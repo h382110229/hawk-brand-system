@@ -3,29 +3,24 @@
   "$description": "HAWK Design System — Elevation / Shadow Tokens",
   "elevation": {
     "none": {
-      "$value": "#TODO",
+      "$value": "none",
       "$type": "shadow",
       "$description": "基底 — 无阴影"
     },
     "low": {
-      "$value": "#TODO",
+      "$value": "0 1px 3px rgba(0,0,0,0.08)",
       "$type": "shadow",
       "$description": "卡片、按钮 — 微浮起"
     },
     "medium": {
-      "$value": "#TODO",
+      "$value": "0 4px 12px rgba(0,0,0,0.12)",
       "$type": "shadow",
       "$description": "弹窗、下拉 — 中等浮起"
     },
     "high": {
-      "$value": "#TODO",
+      "$value": "0 8px 24px rgba(0,0,0,0.16)",
       "$type": "shadow",
       "$description": "模态框 — 明显浮起"
-    },
-    "embossed": {
-      "$value": "#TODO",
-      "$type": "shadow",
-      "$description": "Logo、品牌元素专用 — 金属浮雕效果"
     }
   }
 }

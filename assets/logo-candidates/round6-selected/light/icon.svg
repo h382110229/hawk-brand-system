@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="none">
+  <rect width="1024" height="1024" fill="#FFFFFF"/>
+  <g stroke="#4285F4" stroke-width="56" stroke-linecap="butt" stroke-linejoin="miter">
+    <!-- H: left vertical + crossbar -->
+    <path d="M252 220V804M252 512H448"/>
+    <!-- A: peak + legs -->
+    <path d="M360 580L448 220 536 580"/>
+    <!-- W: two V shapes -->
+    <path d="M300 580L380 804 448 650 516 804 596 580"/>
+    <!-- K: vertical + diagonals -->
+    <path d="M536 220V804M536 512L700 220M536 512L700 804"/>
+  </g>
+</svg>

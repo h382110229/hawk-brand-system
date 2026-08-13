@@ -1,0 +1,45 @@
+{
+  "name": "hawk-brand-system",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "tokens:build": "tsx scripts/build-tokens.ts",
+    "tokens:check": "tsx scripts/check-tokens.ts",
+    "brand:sync": "tsx scripts/brand-sync.ts",
+    "browser:verify": "node --experimental-strip-types --no-warnings scripts/browser-verify.mts",
+    "screenshots:actual": "node --experimental-strip-types --no-warnings scripts/browser-verify.mts"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
+    "@google/stitch-sdk": "^0.3.5",
+    "@tailwindcss/postcss": "^4.3.3",
+    "next": "^15.0.0",
+    "puppeteer": "^25.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.6",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.0.0",
+    "jsdom": "^25.0.0",
+    "playwright": "^1.62.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}

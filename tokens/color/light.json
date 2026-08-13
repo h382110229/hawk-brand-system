@@ -47,7 +47,7 @@
         "$description": "卡片背景"
       },
       "tertiary": {
-        "$value": "#TODO",
+        "$value": "#F1F3F4",
         "$type": "color",
         "$description": "悬浮 / 弹窗背景"
       }
@@ -64,41 +64,41 @@
         "$description": "次要文字"
       },
       "disabled": {
-        "$value": "#TODO",
+        "$value": "#9AA0A6",
         "$type": "color",
         "$description": "禁用状态文字"
       }
     },
     "border": {
       "default": {
-        "$value": "#TODO",
+        "$value": "#DADCE0",
         "$type": "color",
         "$description": "默认边框"
       },
       "focus": {
-        "$value": "#TODO",
+        "$value": "#4285F4",
         "$type": "color",
         "$description": "聚焦状态边框"
       }
     },
     "semantic": {
       "success": {
-        "$value": "#TODO",
+        "$value": "#34A853",
         "$type": "color",
         "$description": "成功状态"
       },
       "warning": {
-        "$value": "#TODO",
+        "$value": "#FBBC05",
         "$type": "color",
         "$description": "警告状态"
       },
       "error": {
-        "$value": "#TODO",
+        "$value": "#EA4335",
         "$type": "color",
         "$description": "错误状态"
       },
       "info": {
-        "$value": "#TODO",
+        "$value": "#4285F4",
         "$type": "color",
         "$description": "信息状态"
       }
