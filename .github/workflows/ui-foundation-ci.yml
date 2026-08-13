@@ -61,3 +61,19 @@ jobs:
           name: component-02-verification-report
           path: deliverables/ui-component-02/actual/verification-report.json
           retention-days: 30
+      - name: Component-02B browser verification
+        run: pnpm component-02b:browser-verify
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: component-02b-screenshots
+          path: deliverables/ui-component-02b-input/actual/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: component-02b-verification-report
+          path: deliverables/ui-component-02b-input/actual/verification-report.json
+          retention-days: 30

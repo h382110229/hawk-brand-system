@@ -1,0 +1,684 @@
+{
+  "gate": "HAWK-UI-Component-02B Input Round 1",
+  "baseSha": "24d8cdb3c6c96d240ca63ed7444f91e0defaaa17",
+  "headSha": "24d8cdb3c6c96d240ca63ed7444f91e0defaaa17",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "themeColorDifference": true,
+  "results": [
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "visibility": {
+        "inputs": true,
+        "labels": true,
+        "description": true,
+        "error": true,
+        "required": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "sizes": [
+        "44px",
+        "48px"
+      ],
+      "computedStyles": [
+        {
+          "label": "Small",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Medium",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Large",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "48px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Default",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Description",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Error",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(234, 67, 53)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        }
+      ],
+      "contrast": {
+        "ratio": 16.46,
+        "pass": true
+      },
+      "interactions": {
+        "focusVisible": true,
+        "hover": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "a11y": {
+        "ariaInvalid": true,
+        "errorDescribedBy": true,
+        "labelAssociation": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false,
+        "touchTargets": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "desktop-dark.png",
+        "sha256": "2782865d13fee44c1777ba86a946dd0121c9c856b5ba302c1b88b2bc5bb4c890"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "visibility": {
+        "inputs": true,
+        "labels": true,
+        "description": true,
+        "error": true,
+        "required": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "sizes": [
+        "44px",
+        "48px"
+      ],
+      "computedStyles": [
+        {
+          "label": "Small",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Medium",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Large",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "48px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Default",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Description",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Error",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(234, 67, 53)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        }
+      ],
+      "contrast": {
+        "ratio": 16.1,
+        "pass": true
+      },
+      "interactions": {
+        "focusVisible": true,
+        "hover": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "a11y": {
+        "ariaInvalid": true,
+        "errorDescribedBy": true,
+        "labelAssociation": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false,
+        "touchTargets": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "desktop-light.png",
+        "sha256": "e890393e74de698199f0bcc07f13307ecda3729013f6a90854730214f9fb8f80"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "visibility": {
+        "inputs": true,
+        "labels": true,
+        "description": true,
+        "error": true,
+        "required": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "sizes": [
+        "44px",
+        "48px"
+      ],
+      "computedStyles": [
+        {
+          "label": "Small",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Medium",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Large",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "48px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Default",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Description",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Error",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(234, 67, 53)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        }
+      ],
+      "contrast": {
+        "ratio": 16.46,
+        "pass": true
+      },
+      "interactions": {
+        "focusVisible": true,
+        "hover": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "a11y": {
+        "ariaInvalid": true,
+        "errorDescribedBy": true,
+        "labelAssociation": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false,
+        "touchTargets": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "tablet-dark.png",
+        "sha256": "910b768fa90de45289ab34babc21b5ce3fdecc5611eb706d668a23030b50131d"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "visibility": {
+        "inputs": true,
+        "labels": true,
+        "description": true,
+        "error": true,
+        "required": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "sizes": [
+        "44px",
+        "48px"
+      ],
+      "computedStyles": [
+        {
+          "label": "Small",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Medium",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Large",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "48px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Default",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Description",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Error",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(234, 67, 53)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        }
+      ],
+      "contrast": {
+        "ratio": 16.1,
+        "pass": true
+      },
+      "interactions": {
+        "focusVisible": true,
+        "hover": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "a11y": {
+        "ariaInvalid": true,
+        "errorDescribedBy": true,
+        "labelAssociation": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false,
+        "touchTargets": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "tablet-light.png",
+        "sha256": "d143332f358c741b5146a622a826a5c860dc2fcce814875621808fb0d91a13e4"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "visibility": {
+        "inputs": true,
+        "labels": true,
+        "description": true,
+        "error": true,
+        "required": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "sizes": [
+        "44px",
+        "48px"
+      ],
+      "computedStyles": [
+        {
+          "label": "Small",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Medium",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Large",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "48px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Default",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Description",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Error",
+          "bg": "rgb(10, 10, 10)",
+          "color": "rgb(234, 234, 234)",
+          "border": "rgb(234, 67, 53)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        }
+      ],
+      "contrast": {
+        "ratio": 16.46,
+        "pass": true
+      },
+      "interactions": {
+        "focusVisible": true,
+        "hover": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "a11y": {
+        "ariaInvalid": true,
+        "errorDescribedBy": true,
+        "labelAssociation": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false,
+        "touchTargets": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "mobile-dark.png",
+        "sha256": "3564f0cce710410c459e78950dcfd254594559801a9b9081cd1aef169e83324a"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "visibility": {
+        "inputs": true,
+        "labels": true,
+        "description": true,
+        "error": true,
+        "required": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "sizes": [
+        "44px",
+        "48px"
+      ],
+      "computedStyles": [
+        {
+          "label": "Small",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Medium",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Large",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "48px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "Default",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Description",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        },
+        {
+          "label": "With Error",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(32, 33, 36)",
+          "border": "rgb(234, 67, 53)",
+          "radius": "10px",
+          "minH": "44px",
+          "font": "Inter, sans-serif",
+          "fontSize": "16px"
+        }
+      ],
+      "contrast": {
+        "ratio": 16.1,
+        "pass": true
+      },
+      "interactions": {
+        "focusVisible": true,
+        "hover": true,
+        "disabled": true,
+        "readOnly": true
+      },
+      "a11y": {
+        "ariaInvalid": true,
+        "errorDescribedBy": true,
+        "labelAssociation": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false,
+        "touchTargets": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "mobile-light.png",
+        "sha256": "3f77319d9e7c413c872ad96afa855e3b0c3a9337095150aed48bed6be9e10ef8"
+      },
+      "pass": true,
+      "failureReasons": []
+    }
+  ],
+  "overall": "PASS"
+}

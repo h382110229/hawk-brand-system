@@ -3,6 +3,7 @@
 import { HawkLogo } from "@/components/HawkLogo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/Button";
+import { Input } from "@/components/Input";
 import { useTheme } from "@/components/ThemeProvider";
 import {
   COLORS_DARK,
@@ -50,7 +51,7 @@ export default function Home() {
           </span>
         </div>
         <nav className="flex gap-3 sm:gap-6 items-center flex-wrap">
-          {["Logo", "Color", "Typography", "Tokens", "Components"].map((item) => (
+          {["Logo", "Color", "Typography", "Tokens", "Components", "Input"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -443,13 +444,65 @@ export default function Home() {
             <Button fullWidth>Full Width Button</Button>
           </div>
         </section>
+
+        {/* Input */}
+        <section id="input" className="pt-16">
+          <SectionHeader
+            id="input-heading"
+            title="Input"
+            subtitle="Text input with label, description, and error support"
+          />
+
+          {/* Input Sizes */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Input Sizes
+            </h3>
+            <div className="flex flex-col gap-6 max-w-[480px]">
+              <Input label="Small" size="sm" placeholder="sm input" />
+              <Input label="Medium" size="md" placeholder="md input" />
+              <Input label="Large" size="lg" placeholder="lg input" />
+            </div>
+          </div>
+
+          {/* Input States */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Input States
+            </h3>
+            <div className="flex flex-col gap-6 max-w-[480px]">
+              <Input label="Default" placeholder="Enter text" />
+              <Input
+                label="With Description"
+                description="This is a helper text"
+                placeholder="With description"
+              />
+              <Input
+                label="With Error"
+                error="This field is required"
+                placeholder="Error state"
+              />
+              <Input
+                label="Disabled"
+                disabled
+                placeholder="Disabled input"
+              />
+              <Input
+                label="Read Only"
+                readOnly
+                value="Read only value"
+              />
+              <Input label="Required" required placeholder="Required field" />
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
       <footer
         className="text-center py-8 border-t border-[var(--color-border-default)] text-[var(--color-text-secondary)] text-[var(--font-size-sm)]"
       >
-        HAWK Brand System · Gate HAWK-UI-Component-02
+        HAWK Brand System · Gate HAWK-UI-Component-02B
       </footer>
     </div>
   );
