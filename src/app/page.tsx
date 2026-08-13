@@ -483,6 +483,12 @@ export default function Home() {
                 placeholder="Error state"
               />
               <Input
+                label="Description + Error"
+                description="Enter your email address"
+                error="Invalid email format"
+                placeholder="Both description and error"
+              />
+              <Input
                 label="Disabled"
                 disabled
                 placeholder="Disabled input"

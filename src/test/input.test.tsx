@@ -48,15 +48,17 @@ describe("Input", () => {
       expect(screen.getByRole("textbox")).toHaveAttribute("id", "my-input");
     });
 
-    it("applies className", () => {
+    it("applies className to input element", () => {
       render(<Input className="custom-class" data-testid="inp" />);
-      const wrapper = screen.getByTestId("inp").closest("div");
-      expect(wrapper?.className).toContain("custom-class");
+      const input = screen.getByTestId("inp");
+      expect(input.className).toContain("custom-class");
+      // Should also contain base input styles
+      expect(input.className).toContain("block w-full");
     });
 
-    it("applies fullWidth by default", () => {
+    it("applies fullWidth to wrapper div", () => {
       render(<Input data-testid="inp" />);
-      const wrapper = screen.getByTestId("inp").closest("div");
+      const wrapper = screen.getByTestId("inp").parentElement;
       expect(wrapper?.className).toContain("w-full");
     });
 
@@ -159,10 +161,18 @@ describe("Input", () => {
       expect(alert.textContent).toBe("Email is invalid");
     });
 
-    it("does not render description when error is present", () => {
+    it("renders both description and error when both provided", () => {
       render(<Input description="Help" error="Err" />);
-      expect(screen.queryByText("Help")).not.toBeInTheDocument();
+      expect(screen.getByText("Help")).toBeInTheDocument();
       expect(screen.getByText("Err")).toBeInTheDocument();
+    });
+
+    it("description and error both have DOM nodes with IDs", () => {
+      render(<Input description="Help" error="Err" id="x" />);
+      expect(document.getElementById("x-desc")).toBeInTheDocument();
+      expect(document.getElementById("x-desc")?.textContent).toBe("Help");
+      expect(document.getElementById("x-error")).toBeInTheDocument();
+      expect(document.getElementById("x-error")?.textContent).toBe("Err");
     });
   });
 
@@ -202,6 +212,12 @@ describe("Input", () => {
       expect(screen.getByRole("textbox").className).toContain(
         "border-[var(--color-semantic-error)]"
       );
+    });
+
+    it("error text uses text-error token", () => {
+      render(<Input error="Bad" />);
+      const errorEl = screen.getByRole("alert");
+      expect(errorEl.className).toContain("text-[var(--color-text-error)]");
     });
 
     it("default input has default border class", () => {

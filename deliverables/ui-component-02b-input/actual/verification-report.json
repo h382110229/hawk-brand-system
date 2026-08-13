@@ -1,7 +1,7 @@
 {
   "gate": "HAWK-UI-Component-02B Input Round 1",
   "baseSha": "24d8cdb3c6c96d240ca63ed7444f91e0defaaa17",
-  "headSha": "24d8cdb3c6c96d240ca63ed7444f91e0defaaa17",
+  "headSha": "82885f0faa7a0ab1e7aaea4613e91e5e32522e08",
   "viewports": [
     {
       "name": "desktop",
@@ -116,6 +116,7 @@
       "a11y": {
         "ariaInvalid": true,
         "errorDescribedBy": true,
+        "dualDescError": true,
         "labelAssociation": true,
         "reducedMotion": true
       },
@@ -225,6 +226,7 @@
       "a11y": {
         "ariaInvalid": true,
         "errorDescribedBy": true,
+        "dualDescError": true,
         "labelAssociation": true,
         "reducedMotion": true
       },
@@ -334,6 +336,7 @@
       "a11y": {
         "ariaInvalid": true,
         "errorDescribedBy": true,
+        "dualDescError": true,
         "labelAssociation": true,
         "reducedMotion": true
       },
@@ -347,7 +350,7 @@
       },
       "screenshot": {
         "file": "tablet-dark.png",
-        "sha256": "910b768fa90de45289ab34babc21b5ce3fdecc5611eb706d668a23030b50131d"
+        "sha256": "2fbf15d956739b5f6d05753864e93e56cefc21f552804bbf2e2278e04beb1f3e"
       },
       "pass": true,
       "failureReasons": []
@@ -443,6 +446,7 @@
       "a11y": {
         "ariaInvalid": true,
         "errorDescribedBy": true,
+        "dualDescError": true,
         "labelAssociation": true,
         "reducedMotion": true
       },
@@ -456,7 +460,7 @@
       },
       "screenshot": {
         "file": "tablet-light.png",
-        "sha256": "d143332f358c741b5146a622a826a5c860dc2fcce814875621808fb0d91a13e4"
+        "sha256": "9e5323c7d9050055524dbf8063fdd5266d0027ab1e1da5aba3633b22588214ee"
       },
       "pass": true,
       "failureReasons": []
@@ -552,6 +556,7 @@
       "a11y": {
         "ariaInvalid": true,
         "errorDescribedBy": true,
+        "dualDescError": true,
         "labelAssociation": true,
         "reducedMotion": true
       },
@@ -661,6 +666,7 @@
       "a11y": {
         "ariaInvalid": true,
         "errorDescribedBy": true,
+        "dualDescError": true,
         "labelAssociation": true,
         "reducedMotion": true
       },

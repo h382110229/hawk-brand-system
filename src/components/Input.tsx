@@ -53,6 +53,9 @@ const sizeStyles: Record<InputSize, { input: string; label: string }> = {
  *
  * Renders a native `<input>` element with label, description, error,
  * and HAWK design-token styling.
+ *
+ * className applies to the input element, not the wrapper.
+ * Wrapper styling is controlled by fullWidth.
  */
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   function Input(
@@ -76,23 +79,20 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ) {
     const autoId = useId();
     const inputId = callerId ?? `input-${autoId}`;
-    const descriptionId = description ? `${inputId}-desc` : undefined;
-    const errorId = error ? `${inputId}-error` : undefined;
+    const descriptionId = `${inputId}-desc`;
+    const errorId = `${inputId}-error`;
 
-    // Build aria-describedby: merge caller, description, error
-    const describedBy = [
-      callerDescribedBy,
-      descriptionId,
-      errorId,
-    ]
-      .filter(Boolean)
-      .join(" ") || undefined;
+    // Build aria-describedby: caller + description (if present) + error (if present)
+    const describedParts = [callerDescribedBy];
+    if (description) describedParts.push(descriptionId);
+    if (error) describedParts.push(errorId);
+    const describedBy = describedParts.filter(Boolean).join(" ") || undefined;
 
-    // aria-invalid: error prop takes precedence, then caller value
+    // aria-invalid: error takes precedence, then caller value
     const ariaInvalid = error ? true : callerInvalid;
 
     return (
-      <div className={cn(fullWidth && "w-full", className)}>
+      <div className={cn(fullWidth && "w-full")}>
         {/* Label */}
         {label && (
           <label
@@ -119,7 +119,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
 
-        {/* Input */}
+        {/* Input — className applies here */}
         <input
           ref={ref}
           id={inputId}
@@ -172,13 +172,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             readOnly &&
               "bg-[var(--color-background-secondary)] cursor-default",
             // Size
-            sizeStyles[size].input
+            sizeStyles[size].input,
+            // Caller className applied to input
+            className
           )}
           {...rest}
         />
 
-        {/* Description */}
-        {description && !error && (
+        {/* Description — always rendered when provided (even with error) */}
+        {description && (
           <p
             id={descriptionId}
             className={cn(
@@ -191,7 +193,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           </p>
         )}
 
-        {/* Error */}
+        {/* Error — rendered when error is present */}
         {error && (
           <p
             id={errorId}
@@ -200,7 +202,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               "mt-[var(--spacing-1)]",
               "text-[var(--font-size-sm)]",
               "font-[var(--font-weight-medium)]",
-              "text-[var(--color-semantic-error)]"
+              "text-[var(--color-text-error)]"
             )}
           >
             {error}

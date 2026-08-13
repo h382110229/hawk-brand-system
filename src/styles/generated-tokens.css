@@ -13,6 +13,7 @@
   --color-text-secondary: #5F6368;
   --color-text-disabled: #9AA0A6;
   --color-text-on-primary: #202124;
+  --color-text-error: #C62828;
   --color-border-default: #DADCE0;
   --color-border-focus: #4285F4;
   --color-brand-accent-red: #EA4335;
@@ -90,6 +91,7 @@
   --color-text-secondary: #A0A0A0;
   --color-text-disabled: #666666;
   --color-text-on-primary: #0A0A0A;
+  --color-text-error: #EA4335;
   --color-border-default: #2A2A2A;
   --color-border-focus: #D4AF37;
 }
@@ -106,6 +108,7 @@
     --color-text-secondary: #A0A0A0;
     --color-text-disabled: #666666;
     --color-text-on-primary: #0A0A0A;
+    --color-text-error: #EA4335;
     --color-border-default: #2A2A2A;
     --color-border-focus: #D4AF37;
   }

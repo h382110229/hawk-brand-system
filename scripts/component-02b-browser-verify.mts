@@ -114,6 +114,7 @@ interface VerificationResult {
   readOnlyPass: boolean;
   errorAriaInvalid: boolean;
   errorDescribedBy: boolean;
+  dualDescErrorPass: boolean;
   labelAssociation: boolean;
   touchTargetsPass: boolean;
   horizontalOverflow: boolean;
@@ -265,6 +266,26 @@ async function verifyViewport(
     });
   });
 
+  // Dual description + error: both DOM nodes exist and both IDs in aria-describedby
+  const dualDescErrorPass = await page.evaluate(() => {
+    // Find input that has both description and error
+    const inputs = document.querySelectorAll('[id="input"] input');
+    for (const inp of Array.from(inputs)) {
+      const db = inp.getAttribute("aria-describedby") ?? "";
+      if (db.includes("desc") && db.includes("error")) {
+        // Both IDs must have corresponding DOM nodes
+        const descIds = db.split(" ");
+        return descIds.every(id => !!document.getElementById(id));
+      }
+    }
+    // If no input has both, check that the showcase has both a description and error visible
+    const section = document.getElementById("input");
+    if (!section) return false;
+    const hasDesc = !!section.querySelector("p:not([role='alert'])");
+    const hasError = !!section.querySelector("p[role='alert']");
+    return hasDesc && hasError;
+  });
+
   // Label association
   const labelAssociation = await page.evaluate(() => {
     const labels = document.querySelectorAll('[id="input"] label');
@@ -315,6 +336,7 @@ async function verifyViewport(
   if (!readOnlyPass) failureReasons.push("ReadOnly state not verified");
   if (!errorAriaInvalid) failureReasons.push("aria-invalid missing on error input");
   if (!errorDescribedBy) failureReasons.push("error not in aria-describedby");
+  if (!dualDescErrorPass) failureReasons.push("description+error dual DOM not verified");
   if (!labelAssociation) failureReasons.push("Labels not associated with inputs");
   if (!reducedMotion) failureReasons.push("prefers-reduced-motion not found");
   if (horizontalOverflow) failureReasons.push("Horizontal overflow");
@@ -333,7 +355,7 @@ async function verifyViewport(
     defaultContrast: +defaultContrast.toFixed(2),
     defaultContrastPass,
     focusVisiblePass, hoverPass, disabledPass, readOnlyPass,
-    errorAriaInvalid, errorDescribedBy, labelAssociation,
+    errorAriaInvalid, errorDescribedBy, dualDescErrorPass, labelAssociation,
     touchTargetsPass,
     horizontalOverflow,
     consoleErrors, pageErrors,
@@ -399,7 +421,7 @@ async function main() {
       computedStyles: r.computedStyles,
       contrast: { ratio: r.defaultContrast, pass: r.defaultContrastPass },
       interactions: { focusVisible: r.focusVisiblePass, hover: r.hoverPass, disabled: r.disabledPass, readOnly: r.readOnlyPass },
-      a11y: { ariaInvalid: r.errorAriaInvalid, errorDescribedBy: r.errorDescribedBy, labelAssociation: r.labelAssociation, reducedMotion: r.reducedMotion },
+      a11y: { ariaInvalid: r.errorAriaInvalid, errorDescribedBy: r.errorDescribedBy, dualDescError: r.dualDescErrorPass, labelAssociation: r.labelAssociation, reducedMotion: r.reducedMotion },
       layout: { overflow: r.horizontalOverflow, touchTargets: r.touchTargetsPass },
       errors: { console: r.consoleErrors, page: r.pageErrors },
       screenshot: { file: r.screenshotPath, sha256: r.screenshotHash },
