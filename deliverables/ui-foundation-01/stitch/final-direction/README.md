@@ -17,12 +17,16 @@ master (desktop-dark)
 
 ## Screens
 
-| Screen | Screen ID | Size | SHA-256 |
-|--------|-----------|------|---------|
-| Desktop Dark (master) | 1631f118e576480fb8a4032e0cc655e7 | 17KB | ac1c4db2... |
-| Desktop Light | 15cedf97c5cb453d836c46786f4ae1b8 | 12KB | ac0c0fec... |
-| Mobile Dark | 32ef208882a546e6a0d9aa9849a0d117 | 20KB | 0df813c1... |
-| Mobile Light | 413d505d16ab4b8cb4010186c0dceb48 | 5KB | 5488ee81... |
+| Screen | Screen ID | Pixel Dimensions | File Size | SHA-256 |
+|--------|-----------|-----------------|-----------|---------|
+| Desktop Dark (master) | `1631f118e576480fb8a4032e0cc655e7` | 1440×900 | 84,869 bytes | `9032c1f2cfcb5b1cb7b3039e1e4c25795bc699ba22932928a06183205ddf612b` |
+| Desktop Light | `15cedf97c5cb453d836c46786f4ae1b8` | 1440×900 | 79,053 bytes | `e13c5ad0f571a4ecb956a90855d36b54bd3852bd6fe4ef545f89f326a534199e` |
+| Mobile Dark | `32ef208882a546e6a0d9aa9849a0d117` | 375×812 | 67,020 bytes | `24d1f49719da9f548c672d6ae70bdde6d10ce11bda6f3b5e17654dddc5c0f3de` |
+| Mobile Light | `413d505d16ab4b8cb4010186c0dceb48` | 375×812 | 37,571 bytes | `3a45465a04c3b161476a6137c56d290210d25c1f53f1042ff40cb3d65d6ab44f` |
+
+## Image Export Method
+
+Stitch SDK `getImage()` returns a Google FIFE URL. The raw URL serves a thumbnail (~191×512). Appending `=s0` to the URL returns the full-resolution image (2560×6860 for desktop, 780×3540 for mobile). The full-res images were downloaded, scaled to target viewport width, and top-cropped to target height using Pillow/LANCZOS resampling.
 
 ## Prompt
 
@@ -53,6 +57,8 @@ Stitch uses a blank rectangular placeholder marked "ROUND 6 LOGO SLOT". Engineer
 - [x] No template SaaS CTA
 - [x] No incorrect brand copy
 - [x] SHA-256 differs from R2/R3 old files
+- [x] Desktop screenshots are 1440×900 (verified via IHDR)
+- [x] Mobile screenshots are 375×812 (verified via IHDR)
 
 ## Consistency Check
 
