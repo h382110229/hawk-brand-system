@@ -10,9 +10,51 @@ const __dirname = path.dirname(__filename);
 
 const PORT = 3002;
 const BASE_URL = `http://localhost:${PORT}`;
-const chromePath =
-  process.env.CHROME_PATH ||
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
+function resolveChromePath(): string {
+  // 1. Explicit env
+  if (process.env.CHROME_PATH) {
+    const p = process.env.CHROME_PATH;
+    if (fs.existsSync(p)) {
+      console.log(`Chrome: ${p} (from CHROME_PATH)`);
+      return p;
+    }
+    console.error(`CHROME_PATH=${p} does not exist`);
+    process.exit(1);
+  }
+
+  // 2. Puppeteer bundled path (if available)
+  try {
+    const p = puppeteer.executablePath();
+    if (p && fs.existsSync(p)) {
+      console.log(`Chrome: ${p} (from puppeteer.executablePath)`);
+      return p;
+    }
+  } catch {
+    // puppeteer may not have a bundled browser
+  }
+
+  // 3. OS-specific fallbacks
+  const candidates = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", // macOS
+    "/usr/bin/google-chrome", // Linux
+    "/usr/bin/google-chrome-stable", // Linux
+    "/usr/bin/chromium-browser", // Linux
+    "/usr/bin/chromium", // Linux
+  ];
+
+  for (const c of candidates) {
+    if (fs.existsSync(c)) {
+      console.log(`Chrome: ${c} (auto-detected)`);
+      return c;
+    }
+  }
+
+  console.error("No Chrome found. Set CHROME_PATH environment variable.");
+  process.exit(1);
+}
+
+const chromePath = resolveChromePath();
 const SCREENSHOT_DIR = path.resolve(
   __dirname,
   "../deliverables/ui-foundation-01/actual"

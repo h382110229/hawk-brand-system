@@ -25,12 +25,14 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - name: Install Chrome
+        id: setup-chrome
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
-      - run: pnpm browser:verify
+      - name: Browser verification
+        run: pnpm browser:verify
         env:
-          CHROME_PATH: ${{ env.CHROME_PATH }}
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
