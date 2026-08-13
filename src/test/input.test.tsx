@@ -214,10 +214,10 @@ describe("Input", () => {
       );
     });
 
-    it("error text uses text-error token", () => {
+    it("error text uses text-error token via inline style", () => {
       render(<Input error="Bad" />);
       const errorEl = screen.getByRole("alert");
-      expect(errorEl.className).toContain("text-[var(--color-text-error)]");
+      expect(errorEl.style.color).toBe("var(--color-text-error)");
     });
 
     it("default input has default border class", () => {

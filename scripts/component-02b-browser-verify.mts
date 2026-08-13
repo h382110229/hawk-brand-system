@@ -108,6 +108,8 @@ interface VerificationResult {
   computedStyles: { label: string; bg: string; color: string; border: string; radius: string; minH: string; font: string; fontSize: string }[];
   defaultContrast: number;
   defaultContrastPass: boolean;
+  errorTextContrast: number;
+  errorTextContrastPass: boolean;
   focusVisiblePass: boolean;
   hoverPass: boolean;
   disabledPass: boolean;
@@ -204,6 +206,27 @@ async function verifyViewport(
     ? contrastRatio(rgbToHex(defaultInput.color), rgbToHex(defaultInput.bg))
     : 0;
   const defaultContrastPass = defaultContrast >= 4.5;
+
+  // Error text contrast: read computed color of error text (role="alert")
+  const errorTextStyles = await page.evaluate(() => {
+    const errorEl = document.querySelector('[id="input"] p[role="alert"]');
+    if (!errorEl) return null;
+    const cs = getComputedStyle(errorEl);
+    // Find the background behind the error text (parent input's bg)
+    const input = errorEl.closest("div")?.querySelector("input");
+    const bgCs = input ? getComputedStyle(input) : null;
+    return {
+      color: cs.color,
+      bg: bgCs?.backgroundColor ?? "rgb(255, 255, 255)",
+      fontFamily: cs.fontFamily,
+      fontSize: cs.fontSize,
+      fontWeight: cs.fontWeight,
+    };
+  });
+  const errorTextContrast = errorTextStyles
+    ? contrastRatio(rgbToHex(errorTextStyles.color), rgbToHex(errorTextStyles.bg))
+    : 0;
+  const errorTextContrastPass = errorTextContrast >= 4.5;
 
   // Focus-visible
   let focusVisiblePass = false;
@@ -330,6 +353,7 @@ async function verifyViewport(
   if (!readOnlyVisible) failureReasons.push("Read-only not visible");
   if (!touchTargetsPass) failureReasons.push("Touch targets < 44px");
   if (!defaultContrastPass) failureReasons.push(`Text contrast ${defaultContrast.toFixed(2)}:1 < 4.5:1`);
+  if (!errorTextContrastPass) failureReasons.push(`Error text contrast ${errorTextContrast.toFixed(2)}:1 < 4.5:1`);
   if (!focusVisiblePass) failureReasons.push("Focus-visible not detected");
   if (!hoverPass) failureReasons.push("Hover class not found");
   if (!disabledPass) failureReasons.push("Disabled state not verified");
@@ -354,6 +378,8 @@ async function verifyViewport(
     computedStyles,
     defaultContrast: +defaultContrast.toFixed(2),
     defaultContrastPass,
+    errorTextContrast: +errorTextContrast.toFixed(2),
+    errorTextContrastPass,
     focusVisiblePass, hoverPass, disabledPass, readOnlyPass,
     errorAriaInvalid, errorDescribedBy, dualDescErrorPass, labelAssociation,
     touchTargetsPass,
@@ -419,7 +445,7 @@ async function main() {
       visibility: { inputs: r.inputsVisible, labels: r.labelsVisible, description: r.descriptionVisible, error: r.errorVisible, required: r.requiredVisible, disabled: r.disabledVisible, readOnly: r.readOnlyVisible },
       sizes: r.sizesVisible,
       computedStyles: r.computedStyles,
-      contrast: { ratio: r.defaultContrast, pass: r.defaultContrastPass },
+      contrast: { defaultRatio: r.defaultContrast, defaultPass: r.defaultContrastPass, errorTextRatio: r.errorTextContrast, errorTextPass: r.errorTextContrastPass },
       interactions: { focusVisible: r.focusVisiblePass, hover: r.hoverPass, disabled: r.disabledPass, readOnly: r.readOnlyPass },
       a11y: { ariaInvalid: r.errorAriaInvalid, errorDescribedBy: r.errorDescribedBy, dualDescError: r.dualDescErrorPass, labelAssociation: r.labelAssociation, reducedMotion: r.reducedMotion },
       layout: { overflow: r.horizontalOverflow, touchTargets: r.touchTargetsPass },

@@ -183,11 +183,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         {description && (
           <p
             id={descriptionId}
-            className={cn(
-              "mt-[var(--spacing-1)]",
-              "text-[var(--font-size-sm)]",
-              "text-[var(--color-text-secondary)]"
-            )}
+            className="mt-[var(--spacing-1)]"
+            style={{
+              color: "var(--color-text-secondary)",
+              fontSize: "var(--font-size-sm)",
+            }}
           >
             {description}
           </p>
@@ -201,9 +201,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               "mt-[var(--spacing-1)]",
               "text-[var(--font-size-sm)]",
-              "font-[var(--font-weight-medium)]",
-              "text-[var(--color-text-error)]"
+              "font-[var(--font-weight-medium)]"
             )}
+            style={{ color: "var(--color-text-error)" }}
           >
             {error}
           </p>

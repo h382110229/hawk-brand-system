@@ -1,7 +1,7 @@
 {
   "gate": "HAWK-UI-Component-02B Input Round 1",
   "baseSha": "24d8cdb3c6c96d240ca63ed7444f91e0defaaa17",
-  "headSha": "82885f0faa7a0ab1e7aaea4613e91e5e32522e08",
+  "headSha": "80c18225f31db25f72e1060945103ccaba3e5c4b",
   "viewports": [
     {
       "name": "desktop",
@@ -104,8 +104,10 @@
         }
       ],
       "contrast": {
-        "ratio": 16.46,
-        "pass": true
+        "defaultRatio": 16.46,
+        "defaultPass": true,
+        "errorTextRatio": 5.05,
+        "errorTextPass": true
       },
       "interactions": {
         "focusVisible": true,
@@ -130,7 +132,7 @@
       },
       "screenshot": {
         "file": "desktop-dark.png",
-        "sha256": "2782865d13fee44c1777ba86a946dd0121c9c856b5ba302c1b88b2bc5bb4c890"
+        "sha256": "70f86ac5761dcb5098b9318338a9e12cc46cdd32f75de2bd0c5dc286cf732620"
       },
       "pass": true,
       "failureReasons": []
@@ -214,8 +216,10 @@
         }
       ],
       "contrast": {
-        "ratio": 16.1,
-        "pass": true
+        "defaultRatio": 16.1,
+        "defaultPass": true,
+        "errorTextRatio": 5.62,
+        "errorTextPass": true
       },
       "interactions": {
         "focusVisible": true,
@@ -240,7 +244,7 @@
       },
       "screenshot": {
         "file": "desktop-light.png",
-        "sha256": "e890393e74de698199f0bcc07f13307ecda3729013f6a90854730214f9fb8f80"
+        "sha256": "769b8026c753bf76c703ce6d1927ea33ee0343a77392ac3be3ec743b42be997c"
       },
       "pass": true,
       "failureReasons": []
@@ -324,8 +328,10 @@
         }
       ],
       "contrast": {
-        "ratio": 16.46,
-        "pass": true
+        "defaultRatio": 16.46,
+        "defaultPass": true,
+        "errorTextRatio": 5.05,
+        "errorTextPass": true
       },
       "interactions": {
         "focusVisible": true,
@@ -350,7 +356,7 @@
       },
       "screenshot": {
         "file": "tablet-dark.png",
-        "sha256": "2fbf15d956739b5f6d05753864e93e56cefc21f552804bbf2e2278e04beb1f3e"
+        "sha256": "43bfa5fabb2bc601e2a723310f81ece80be670522112f78d6f2313504a29d174"
       },
       "pass": true,
       "failureReasons": []
@@ -434,8 +440,10 @@
         }
       ],
       "contrast": {
-        "ratio": 16.1,
-        "pass": true
+        "defaultRatio": 16.1,
+        "defaultPass": true,
+        "errorTextRatio": 5.62,
+        "errorTextPass": true
       },
       "interactions": {
         "focusVisible": true,
@@ -460,7 +468,7 @@
       },
       "screenshot": {
         "file": "tablet-light.png",
-        "sha256": "9e5323c7d9050055524dbf8063fdd5266d0027ab1e1da5aba3633b22588214ee"
+        "sha256": "8f42b16a6a313c38e60b85db6d15ca1ed5df63382ee7884d47eda54300c8a613"
       },
       "pass": true,
       "failureReasons": []
@@ -544,8 +552,10 @@
         }
       ],
       "contrast": {
-        "ratio": 16.46,
-        "pass": true
+        "defaultRatio": 16.46,
+        "defaultPass": true,
+        "errorTextRatio": 5.05,
+        "errorTextPass": true
       },
       "interactions": {
         "focusVisible": true,
@@ -570,7 +580,7 @@
       },
       "screenshot": {
         "file": "mobile-dark.png",
-        "sha256": "3564f0cce710410c459e78950dcfd254594559801a9b9081cd1aef169e83324a"
+        "sha256": "12b03eff87672ba38c7bf11c3f14983b5ceba864ece422798ccb00d34049d035"
       },
       "pass": true,
       "failureReasons": []
@@ -654,8 +664,10 @@
         }
       ],
       "contrast": {
-        "ratio": 16.1,
-        "pass": true
+        "defaultRatio": 16.1,
+        "defaultPass": true,
+        "errorTextRatio": 5.62,
+        "errorTextPass": true
       },
       "interactions": {
         "focusVisible": true,
@@ -680,7 +692,7 @@
       },
       "screenshot": {
         "file": "mobile-light.png",
-        "sha256": "3f77319d9e7c413c872ad96afa855e3b0c3a9337095150aed48bed6be9e10ef8"
+        "sha256": "69359ac203c3fa161379ccd7384c2cb22eb936c9992bf2e595ffbf4fb30e7f11"
       },
       "pass": true,
       "failureReasons": []
