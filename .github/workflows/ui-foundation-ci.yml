@@ -15,7 +15,7 @@ jobs:
           version: 11
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm tokens:check
@@ -24,10 +24,22 @@ jobs:
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
       - run: pnpm browser:verify
+        env:
+          CHROME_PATH: ${{ env.CHROME_PATH }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: screenshots
           path: deliverables/ui-foundation-01/actual/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-report
+          path: deliverables/ui-foundation-01/actual/verification-report.json
           retention-days: 30

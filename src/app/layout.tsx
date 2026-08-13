@@ -14,6 +14,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "HAWK Brand System",
   description: "A personal technology identity system — 轻奢 · 现代 · 智能",
+  icons: {
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><text x='8' y='24' font-size='20' fill='%23D4AF37'>H</text></svg>",
+  },
 };
 
 export default function RootLayout({

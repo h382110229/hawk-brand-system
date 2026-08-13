@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-08-13T00:22:05.397Z",
+  "allPass": true,
+  "results": [
+    {
+      "viewport": "desktop",
+      "viewportSize": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "dark",
+      "dataTheme": "dark",
+      "bgColor": "rgb(10, 10, 10)",
+      "tailwindApplied": true,
+      "tokenStylesheetLoaded": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "horizontalOverflow": false,
+      "screenshotHash": "93a137670026760d",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-dark.png",
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "desktop",
+      "viewportSize": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "light",
+      "dataTheme": "light",
+      "bgColor": "rgb(255, 255, 255)",
+      "tailwindApplied": true,
+      "tokenStylesheetLoaded": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "horizontalOverflow": false,
+      "screenshotHash": "d5716fa77e059675",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-light.png",
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "viewportSize": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "dark",
+      "dataTheme": "dark",
+      "bgColor": "rgb(10, 10, 10)",
+      "tailwindApplied": true,
+      "tokenStylesheetLoaded": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "horizontalOverflow": false,
+      "screenshotHash": "2e73a4e0e0d0e1d3",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-dark.png",
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "viewportSize": {
+        "width": 768,
+        "height": 1024
+      },
+      "theme": "light",
+      "dataTheme": "light",
+      "bgColor": "rgb(255, 255, 255)",
+      "tailwindApplied": true,
+      "tokenStylesheetLoaded": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "horizontalOverflow": false,
+      "screenshotHash": "21ae0b3b30071081",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-light.png",
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "viewportSize": {
+        "width": 375,
+        "height": 812
+      },
+      "theme": "dark",
+      "dataTheme": "dark",
+      "bgColor": "rgb(10, 10, 10)",
+      "tailwindApplied": true,
+      "tokenStylesheetLoaded": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "horizontalOverflow": false,
+      "screenshotHash": "4cc199daa93e11dc",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-dark.png",
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "viewportSize": {
+        "width": 375,
+        "height": 812
+      },
+      "theme": "light",
+      "dataTheme": "light",
+      "bgColor": "rgb(255, 255, 255)",
+      "tailwindApplied": true,
+      "tokenStylesheetLoaded": true,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "horizontalOverflow": false,
+      "screenshotHash": "0aa05b9f55186663",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-light.png",
+      "pass": true,
+      "failureReasons": []
+    }
+  ]
+}

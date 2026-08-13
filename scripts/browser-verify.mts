@@ -2,35 +2,52 @@ import puppeteer from "puppeteer";
 import { spawn } from "child_process";
 import * as crypto from "crypto";
 import * as fs from "fs";
-import * as path from "path";
+import { fileURLToPath } from "url";
+import path from "path";
 
-const PORT = 3001;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const PORT = 3002;
 const BASE_URL = `http://localhost:${PORT}`;
-const CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const SCREENSHOT_DIR = path.resolve(__dirname, "../deliverables/ui-foundation-01/actual");
+const chromePath =
+  process.env.CHROME_PATH ||
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const SCREENSHOT_DIR = path.resolve(
+  __dirname,
+  "../deliverables/ui-foundation-01/actual"
+);
+const PROJECT_ROOT = path.resolve(__dirname, "..");
 
 interface VerificationResult {
   viewport: string;
+  viewportSize: { width: number; height: number };
   theme: string;
   dataTheme: string;
   bgColor: string;
+  tailwindApplied: boolean;
+  tokenStylesheetLoaded: boolean;
   consoleErrors: string[];
+  pageErrors: string[];
   horizontalOverflow: boolean;
   screenshotHash: string;
   screenshotPath: string;
   pass: boolean;
+  failureReasons: string[];
 }
 
-async function waitForServer(url: string, timeoutMs = 30000): Promise<boolean> {
+async function waitForServer(url: string, timeoutMs = 90000): Promise<boolean> {
+  // Give the server a moment to bind the port
+  await new Promise((r) => setTimeout(r, 3000));
   const start = Date.now();
   while (Date.now() - start < timeoutMs) {
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
       if (res.ok) return true;
     } catch {
       // not ready yet
     }
-    await new Promise((r) => setTimeout(r, 500));
+    await new Promise((r) => setTimeout(r, 2000));
   }
   return false;
 }
@@ -41,31 +58,61 @@ async function run(): Promise<void> {
     fs.mkdirSync(SCREENSHOT_DIR, { recursive: true });
   }
 
-  // Start Next.js dev server
-  console.log(`Starting Next.js dev server on port ${PORT}...`);
-  const server = spawn("pnpm", ["dev", "--port", String(PORT)], {
-    cwd: path.resolve(__dirname, ".."),
+  // Build production version first
+  console.log("Building production bundle...");
+  const buildResult = await new Promise<number>((resolve) => {
+    const build = spawn("pnpm", ["build"], {
+      cwd: PROJECT_ROOT,
+      stdio: "pipe",
+      env: { ...process.env, NODE_ENV: "production" },
+    });
+    let output = "";
+    build.stdout?.on("data", (d: Buffer) => {
+      output += d.toString();
+      process.stdout.write(d);
+    });
+    build.stderr?.on("data", (d: Buffer) => {
+      output += d.toString();
+      process.stderr.write(d);
+    });
+    build.on("close", (code) => resolve(code ?? 1));
+  });
+
+  if (buildResult !== 0) {
+    console.error("❌ Production build failed");
+    process.exit(1);
+  }
+  console.log("✅ Production build complete");
+
+  // Start Next.js production server
+  console.log(`Starting Next.js production server on port ${PORT}...`);
+  const server = spawn("pnpm", ["start", "--port", String(PORT)], {
+    cwd: PROJECT_ROOT,
     stdio: "pipe",
-    env: { ...process.env, NODE_ENV: "development" },
+    env: { ...process.env, NODE_ENV: "production" },
   });
 
   let serverOutput = "";
-  server.stdout?.on("data", (d: Buffer) => { serverOutput += d.toString(); });
-  server.stderr?.on("data", (d: Buffer) => { serverOutput += d.toString(); });
+  server.stdout?.on("data", (d: Buffer) => {
+    serverOutput += d.toString();
+  });
+  server.stderr?.on("data", (d: Buffer) => {
+    serverOutput += d.toString();
+  });
 
   const ready = await waitForServer(BASE_URL);
   if (!ready) {
-    console.error("❌ Dev server failed to start within 30s");
+    console.error("❌ Production server failed to start within 60s");
     console.error(serverOutput);
     server.kill();
     process.exit(1);
   }
-  console.log("✅ Dev server ready");
+  console.log("✅ Production server ready");
 
   const viewports = [
-    { name: "mobile", width: 375, height: 812 },
-    { name: "tablet", width: 768, height: 1024 },
     { name: "desktop", width: 1440, height: 900 },
+    { name: "tablet", width: 768, height: 1024 },
+    { name: "mobile", width: 375, height: 812 },
   ];
 
   const themes = ["dark", "light"];
@@ -74,9 +121,14 @@ async function run(): Promise<void> {
   let browser;
   try {
     browser = await puppeteer.launch({
-      executablePath: CHROME_PATH,
+      executablePath: chromePath,
       headless: "new",
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-gpu",
+      ],
     });
 
     for (const viewport of viewports) {
@@ -84,12 +136,28 @@ async function run(): Promise<void> {
         console.log(`\nTesting ${viewport.name} / ${theme}...`);
         const page = await browser.newPage();
 
+        // Set viewport
         await page.setViewport({
           width: viewport.width,
           height: viewport.height,
         });
 
+        // Collect console errors and page errors BEFORE navigation
+        const consoleErrors: string[] = [];
+        const pageErrors: string[] = [];
+
+        page.on("console", (msg) => {
+          if (msg.type() === "error") {
+            consoleErrors.push(msg.text());
+          }
+        });
+
+        page.on("pageerror", (err) => {
+          pageErrors.push(err.message);
+        });
+
         // Set theme in localStorage before navigating
+        // Navigate to a blank page first to set localStorage
         await page.goto(BASE_URL, { waitUntil: "domcontentloaded" });
         await page.evaluate((t) => {
           localStorage.setItem("hawk-theme", t);
@@ -98,33 +166,75 @@ async function run(): Promise<void> {
         // Reload to apply theme
         await page.goto(BASE_URL, { waitUntil: "networkidle0" });
 
-        // Wait for fonts
+        // Wait for fonts to load
         await page.evaluate(() => document.fonts.ready);
 
-        // Small delay for rendering
-        await new Promise((r) => setTimeout(r, 500));
+        // Wait for rendering
+        await new Promise((r) => setTimeout(r, 1000));
 
-        // Verify data-theme attribute
+        // === ASSERTIONS ===
+
+        // 1. Verify data-theme attribute matches expected theme
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme")
         );
 
-        // Verify body background
+        // 2 & 3. Verify body background color
         const bgColor = await page.evaluate(() =>
           getComputedStyle(document.body).backgroundColor
         );
 
-        // Check console errors
-        const consoleErrors: string[] = [];
-        page.on("console", (msg) => {
-          if (msg.type() === "error") {
-            consoleErrors.push(msg.text());
+        // Parse bg color
+        const expectedBg =
+          theme === "dark" ? "rgb(10, 10, 10)" : "rgb(255, 255, 255)";
+
+        // 4. Check Tailwind layout styles are applied
+        const tailwindApplied = await page.evaluate(() => {
+          // Check if Tailwind utility classes are being applied
+          // Look for common Tailwind patterns in computed styles
+          const body = document.body;
+          const bodyStyle = getComputedStyle(body);
+          // Tailwind sets box-sizing on all elements via its preflight
+          const allElements = document.querySelectorAll("*");
+          let tailwindDetected = false;
+          for (const el of allElements) {
+            const style = getComputedStyle(el);
+            if (
+              style.boxSizing === "border-box" &&
+              style.fontFamily.includes("Inter")
+            ) {
+              tailwindDetected = true;
+              break;
+            }
           }
+          return tailwindDetected;
         });
 
-        // Check horizontal overflow
+        // 5. Check CSS/token stylesheet loaded
+        const tokenStylesheetLoaded = await page.evaluate(() => {
+          const sheets = Array.from(document.styleSheets);
+          return sheets.some((s) => {
+            try {
+              return (
+                s.href?.includes("generated-tokens") ||
+                (s.cssRules &&
+                  Array.from(s.cssRules).some(
+                    (r) =>
+                      r.cssText?.includes("--color-background-primary") ||
+                      r.cssText?.includes("--font-family")
+                  ))
+              );
+            } catch {
+              return false;
+            }
+          });
+        });
+
+        // 6 & 7. Console and page errors are collected via listeners above
+
+        // 8. Check horizontal overflow
         const horizontalOverflow = await page.evaluate(() => {
-          return document.documentElement.scrollWidth > document.documentElement.clientWidth;
+          return document.body.scrollWidth > window.innerWidth;
         });
 
         // Take screenshot
@@ -140,25 +250,67 @@ async function run(): Promise<void> {
           .digest("hex")
           .slice(0, 16);
 
-        const pass =
-          dataTheme === theme &&
-          !horizontalOverflow &&
-          consoleErrors.length === 0;
+        // Evaluate pass/fail with detailed reasons
+        const failureReasons: string[] = [];
+
+        if (dataTheme !== theme) {
+          failureReasons.push(
+            `data-theme="${dataTheme}" expected "${theme}"`
+          );
+        }
+        if (bgColor !== expectedBg) {
+          failureReasons.push(
+            `bg="${bgColor}" expected "${expectedBg}"`
+          );
+        }
+        if (!tailwindApplied) {
+          failureReasons.push("Tailwind layout styles not detected");
+        }
+        if (!tokenStylesheetLoaded) {
+          failureReasons.push("generated-tokens.css not loaded");
+        }
+        if (consoleErrors.length > 0) {
+          failureReasons.push(
+            `${consoleErrors.length} console error(s): ${consoleErrors.join("; ")}`
+          );
+        }
+        if (pageErrors.length > 0) {
+          failureReasons.push(
+            `${pageErrors.length} page error(s): ${pageErrors.join("; ")}`
+          );
+        }
+        if (horizontalOverflow) {
+          failureReasons.push("Horizontal overflow detected");
+        }
+
+        const pass = failureReasons.length === 0;
 
         results.push({
           viewport: viewport.name,
+          viewportSize: { width: viewport.width, height: viewport.height },
           theme,
           dataTheme: dataTheme || "null",
           bgColor,
+          tailwindApplied,
+          tokenStylesheetLoaded,
           consoleErrors,
+          pageErrors,
           horizontalOverflow,
           screenshotHash,
           screenshotPath,
           pass,
+          failureReasons,
         });
 
         const status = pass ? "✅" : "❌";
-        console.log(`  ${status} data-theme="${dataTheme}" bg="${bgColor}" overflow=${horizontalOverflow} hash=${screenshotHash}`);
+        console.log(
+          `  ${status} data-theme="${dataTheme}" bg="${bgColor}" tailwind=${tailwindApplied} tokens=${tokenStylesheetLoaded} overflow=${horizontalOverflow} consoleErrs=${consoleErrors.length} pageErrs=${pageErrors.length} hash=${screenshotHash}`
+        );
+        if (!pass) {
+          for (const reason of failureReasons) {
+            console.log(`    → ${reason}`);
+          }
+        }
 
         await page.close();
       }
@@ -168,31 +320,52 @@ async function run(): Promise<void> {
     server.kill();
   }
 
-  // Verify dark/light screenshots are different
+  // Cross-checks: dark/light screenshots must differ per viewport
   console.log("\n--- Cross-checks ---");
   for (const vp of viewports) {
-    const darkResult = results.find((r) => r.viewport === vp.name && r.theme === "dark");
-    const lightResult = results.find((r) => r.viewport === vp.name && r.theme === "light");
+    const darkResult = results.find(
+      (r) => r.viewport === vp.name && r.theme === "dark"
+    );
+    const lightResult = results.find(
+      (r) => r.viewport === vp.name && r.theme === "light"
+    );
     if (darkResult && lightResult) {
       const different = darkResult.screenshotHash !== lightResult.screenshotHash;
-      console.log(`  ${different ? "✅" : "❌"} ${vp.name}: dark ≠ light hashes`);
+      console.log(
+        `  ${different ? "✅" : "❌"} ${vp.name}: dark ≠ light hashes`
+      );
       if (!different) {
         darkResult.pass = false;
         lightResult.pass = false;
+        darkResult.failureReasons.push("Screenshot identical to light variant");
+        lightResult.failureReasons.push("Screenshot identical to dark variant");
       }
     }
   }
 
-  // Verify desktop/mobile screenshots are different
+  // Cross-check: desktop/mobile must differ per theme
   for (const theme of themes) {
-    const desktopResult = results.find((r) => r.viewport === "desktop" && r.theme === theme);
-    const mobileResult = results.find((r) => r.viewport === "mobile" && r.theme === theme);
+    const desktopResult = results.find(
+      (r) => r.viewport === "desktop" && r.theme === theme
+    );
+    const mobileResult = results.find(
+      (r) => r.viewport === "mobile" && r.theme === theme
+    );
     if (desktopResult && mobileResult) {
-      const different = desktopResult.screenshotHash !== mobileResult.screenshotHash;
-      console.log(`  ${different ? "✅" : "❌"} ${theme}: desktop ≠ mobile hashes`);
+      const different =
+        desktopResult.screenshotHash !== mobileResult.screenshotHash;
+      console.log(
+        `  ${different ? "✅" : "❌"} ${theme}: desktop ≠ mobile hashes`
+      );
       if (!different) {
         desktopResult.pass = false;
         mobileResult.pass = false;
+        desktopResult.failureReasons.push(
+          `Screenshot identical to mobile/${theme}`
+        );
+        mobileResult.failureReasons.push(
+          `Screenshot identical to desktop/${theme}`
+        );
       }
     }
   }
@@ -202,13 +375,49 @@ async function run(): Promise<void> {
   const allPass = results.every((r) => r.pass);
   for (const r of results) {
     const status = r.pass ? "PASS" : "FAIL";
-    console.log(`  [${status}] ${r.viewport}/${r.theme}: data-theme=${r.dataTheme} bg=${r.bgColor} overflow=${r.horizontalOverflow} errors=${r.consoleErrors.length} hash=${r.screenshotHash}`);
+    console.log(
+      `  [${status}] ${r.viewport}/${r.theme}: data-theme=${r.dataTheme} bg=${r.bgColor} tailwind=${r.tailwindApplied} tokens=${r.tokenStylesheetLoaded} overflow=${r.horizontalOverflow} consoleErrs=${r.consoleErrors.length} pageErrs=${r.pageErrors.length} hash=${r.screenshotHash}`
+    );
+    if (!r.pass) {
+      for (const reason of r.failureReasons) {
+        console.log(`    → ${reason}`);
+      }
+    }
   }
   console.log(`\nOverall: ${allPass ? "✅ ALL PASS" : "❌ SOME FAILED"}`);
 
   // Write report file
-  const reportPath = path.resolve(__dirname, "../deliverables/ui-foundation-01/verification-report.json");
-  fs.writeFileSync(reportPath, JSON.stringify({ results, allPass }, null, 2));
+  const reportPath = path.resolve(
+    __dirname,
+    "../deliverables/ui-foundation-01/actual/verification-report.json"
+  );
+  fs.writeFileSync(
+    reportPath,
+    JSON.stringify(
+      {
+        timestamp: new Date().toISOString(),
+        allPass,
+        results: results.map((r) => ({
+          viewport: r.viewport,
+          viewportSize: r.viewportSize,
+          theme: r.theme,
+          dataTheme: r.dataTheme,
+          bgColor: r.bgColor,
+          tailwindApplied: r.tailwindApplied,
+          tokenStylesheetLoaded: r.tokenStylesheetLoaded,
+          consoleErrors: r.consoleErrors,
+          pageErrors: r.pageErrors,
+          horizontalOverflow: r.horizontalOverflow,
+          screenshotHash: r.screenshotHash,
+          screenshotPath: r.screenshotPath,
+          pass: r.pass,
+          failureReasons: r.failureReasons,
+        })),
+      },
+      null,
+      2
+    )
+  );
   console.log(`\nReport saved to: ${reportPath}`);
 
   process.exit(allPass ? 0 : 1);

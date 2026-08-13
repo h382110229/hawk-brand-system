@@ -48,12 +48,12 @@ export default function Home() {
             HAWK
           </span>
         </div>
-        <nav className="flex gap-6 items-center">
+        <nav className="flex gap-3 sm:gap-6 items-center flex-wrap">
           {["Logo", "Color", "Typography", "Tokens"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-[var(--color-text-secondary)] no-underline text-[var(--font-size-sm)] transition-colors duration-[var(--motion-duration-fast)] ease-[var(--motion-easing-default)] hover:text-[var(--color-text-primary)]"
+              className="text-[var(--color-text-secondary)] no-underline text-[var(--font-size-xs)] sm:text-[var(--font-size-sm)] transition-colors duration-[var(--motion-duration-fast)] ease-[var(--motion-easing-default)] hover:text-[var(--color-text-primary)]"
             >
               {item}
             </a>
