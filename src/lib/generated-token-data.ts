@@ -97,6 +97,11 @@ export const COLORS_DARK: ColorToken[] = [
     "desc": "禁用状态文字"
   },
   {
+    "name": "text.on-primary",
+    "hex": "#0A0A0A",
+    "desc": "Primary 按钮文字 — 深色在金底上"
+  },
+  {
     "name": "border.default",
     "hex": "#2A2A2A",
     "desc": "默认边框"
@@ -188,6 +193,11 @@ export const COLORS_LIGHT: ColorToken[] = [
     "name": "text.disabled",
     "hex": "#9AA0A6",
     "desc": "禁用状态文字"
+  },
+  {
+    "name": "text.on-primary",
+    "hex": "#202124",
+    "desc": "Primary 按钮文字 — 深色在蓝底上"
   },
   {
     "name": "border.default",

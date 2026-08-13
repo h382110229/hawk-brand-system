@@ -2,6 +2,7 @@
 
 import { HawkLogo } from "@/components/HawkLogo";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Button } from "@/components/Button";
 import { useTheme } from "@/components/ThemeProvider";
 import {
   COLORS_DARK,
@@ -49,7 +50,7 @@ export default function Home() {
           </span>
         </div>
         <nav className="flex gap-3 sm:gap-6 items-center flex-wrap">
-          {["Logo", "Color", "Typography", "Tokens"].map((item) => (
+          {["Logo", "Color", "Typography", "Tokens", "Components"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -370,13 +371,85 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Components — Button */}
+        <section id="components" className="pt-16">
+          <SectionHeader
+            id="components-heading"
+            title="Components"
+            subtitle="Reusable UI components built on foundation tokens"
+          />
+
+          {/* Button Variants */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Button Variants
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="outline">Outline</Button>
+              <Button variant="ghost">Ghost</Button>
+            </div>
+          </div>
+
+          {/* Button Sizes */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Button Sizes
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Button size="sm">Small</Button>
+              <Button size="md">Medium</Button>
+              <Button size="lg">Large</Button>
+            </div>
+          </div>
+
+          {/* Button States */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Button States
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Button>Default</Button>
+              <Button disabled>Disabled</Button>
+              <Button loading>Loading</Button>
+              <Button variant="outline" loading>
+                Loading Outline
+              </Button>
+            </div>
+          </div>
+
+          {/* Button with different text lengths */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Button Text Lengths
+            </h3>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Button>OK</Button>
+              <Button>Submit</Button>
+              <Button>Save Changes</Button>
+              <Button variant="secondary">
+                Continue to Next Step
+              </Button>
+            </div>
+          </div>
+
+          {/* Full Width */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Full Width
+            </h3>
+            <Button fullWidth>Full Width Button</Button>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
       <footer
         className="text-center py-8 border-t border-[var(--color-border-default)] text-[var(--color-text-secondary)] text-[var(--font-size-sm)]"
       >
-        HAWK Brand System · Gate HAWK-UI-Foundation-01
+        HAWK Brand System · Gate HAWK-UI-Component-02
       </footer>
     </div>
   );

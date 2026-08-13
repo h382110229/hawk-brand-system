@@ -29,19 +29,35 @@ jobs:
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
-      - name: Browser verification
+      - name: Foundation browser verification
         run: pnpm browser:verify
         env:
           CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: screenshots
+          name: foundation-screenshots
           path: deliverables/ui-foundation-01/actual/
           retention-days: 30
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: verification-report
+          name: foundation-verification-report
           path: deliverables/ui-foundation-01/actual/verification-report.json
+          retention-days: 30
+      - name: Component-02 browser verification
+        run: pnpm component-02:browser-verify
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: component-02-screenshots
+          path: deliverables/ui-component-02/actual/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: component-02-verification-report
+          path: deliverables/ui-component-02/actual/verification-report.json
           retention-days: 30

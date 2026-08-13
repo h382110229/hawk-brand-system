@@ -1,0 +1,360 @@
+{
+  "gate": "HAWK-UI-Component-02 Round 1 (Remediation)",
+  "baseSha": "afe9ee4658e316412e7123dc3b99293921b8029b",
+  "headSha": "05ade8e2bad8716dd5985d06dd7cf0d3584201fa",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "themeColorDifference": true,
+  "results": [
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "variants": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Ghost"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "primary": {
+        "bg": "rgb(212, 175, 55)",
+        "color": "rgb(10, 10, 10)",
+        "contrastRatio": 9.42,
+        "contrastPass": true
+      },
+      "touchTargets": {
+        "sm": "44px",
+        "smPass": true,
+        "md": "44px",
+        "mdPass": true
+      },
+      "interactions": {
+        "hover": true,
+        "outlineHoverContrast": true,
+        "focusVisible": true,
+        "active": true,
+        "disabledClick": true,
+        "loadingClick": true,
+        "enter": true,
+        "space": true
+      },
+      "a11y": {
+        "ariaBusy": true,
+        "ariaDisabled": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "desktop-dark.png",
+        "sha256": "a051e127ab86d77173946ba6131cec84e4e27061be92920326f353ca4e1aa40c"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "variants": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Ghost"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "primary": {
+        "bg": "rgb(66, 133, 244)",
+        "color": "rgb(32, 33, 36)",
+        "contrastRatio": 4.52,
+        "contrastPass": true
+      },
+      "touchTargets": {
+        "sm": "44px",
+        "smPass": true,
+        "md": "44px",
+        "mdPass": true
+      },
+      "interactions": {
+        "hover": true,
+        "outlineHoverContrast": true,
+        "focusVisible": true,
+        "active": true,
+        "disabledClick": true,
+        "loadingClick": true,
+        "enter": true,
+        "space": true
+      },
+      "a11y": {
+        "ariaBusy": true,
+        "ariaDisabled": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "desktop-light.png",
+        "sha256": "a7d19f61aa2a1fcffca7ec1466816b9a1b10d349a5b795cb2b17e97f98a317cb"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "variants": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Ghost"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "primary": {
+        "bg": "rgb(212, 175, 55)",
+        "color": "rgb(10, 10, 10)",
+        "contrastRatio": 9.42,
+        "contrastPass": true
+      },
+      "touchTargets": {
+        "sm": "44px",
+        "smPass": true,
+        "md": "44px",
+        "mdPass": true
+      },
+      "interactions": {
+        "hover": true,
+        "outlineHoverContrast": true,
+        "focusVisible": true,
+        "active": true,
+        "disabledClick": true,
+        "loadingClick": true,
+        "enter": true,
+        "space": true
+      },
+      "a11y": {
+        "ariaBusy": true,
+        "ariaDisabled": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "tablet-dark.png",
+        "sha256": "a81781d3b226fd9174a3c36e39836d541c1eb464acc92a16891a6f8648af674a"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "variants": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Ghost"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "primary": {
+        "bg": "rgb(66, 133, 244)",
+        "color": "rgb(32, 33, 36)",
+        "contrastRatio": 4.52,
+        "contrastPass": true
+      },
+      "touchTargets": {
+        "sm": "44px",
+        "smPass": true,
+        "md": "44px",
+        "mdPass": true
+      },
+      "interactions": {
+        "hover": true,
+        "outlineHoverContrast": true,
+        "focusVisible": true,
+        "active": true,
+        "disabledClick": true,
+        "loadingClick": true,
+        "enter": true,
+        "space": true
+      },
+      "a11y": {
+        "ariaBusy": true,
+        "ariaDisabled": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "tablet-light.png",
+        "sha256": "c5996c1f113dac37040d6c233025a509b97843c0c77fd6d5266499d3c2a944b3"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "variants": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Ghost"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "primary": {
+        "bg": "rgb(212, 175, 55)",
+        "color": "rgb(10, 10, 10)",
+        "contrastRatio": 9.42,
+        "contrastPass": true
+      },
+      "touchTargets": {
+        "sm": "44px",
+        "smPass": true,
+        "md": "44px",
+        "mdPass": true
+      },
+      "interactions": {
+        "hover": true,
+        "outlineHoverContrast": true,
+        "focusVisible": true,
+        "active": true,
+        "disabledClick": true,
+        "loadingClick": true,
+        "enter": true,
+        "space": true
+      },
+      "a11y": {
+        "ariaBusy": true,
+        "ariaDisabled": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "mobile-dark.png",
+        "sha256": "fe8e88ed079303f678810f083b01fedf9c761fe7e1659fee64404050946bdf3c"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "variants": [
+        "Primary",
+        "Secondary",
+        "Outline",
+        "Ghost"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "primary": {
+        "bg": "rgb(66, 133, 244)",
+        "color": "rgb(32, 33, 36)",
+        "contrastRatio": 4.52,
+        "contrastPass": true
+      },
+      "touchTargets": {
+        "sm": "44px",
+        "smPass": true,
+        "md": "44px",
+        "mdPass": true
+      },
+      "interactions": {
+        "hover": true,
+        "outlineHoverContrast": true,
+        "focusVisible": true,
+        "active": true,
+        "disabledClick": true,
+        "loadingClick": true,
+        "enter": true,
+        "space": true
+      },
+      "a11y": {
+        "ariaBusy": true,
+        "ariaDisabled": true,
+        "reducedMotion": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "mobile-light.png",
+        "sha256": "8136c518594c333a42f701a349b90a20714b6888b1f215e7bd78cad5b96dee25"
+      },
+      "pass": true,
+      "failureReasons": []
+    }
+  ],
+  "overall": "PASS"
+}
