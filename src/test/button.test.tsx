@@ -57,6 +57,8 @@ describe("Button", () => {
       const btn = screen.getByRole("button");
       // primary uses brand-primary background
       expect(btn.className).toContain("bg-[var(--color-brand-primary)]");
+      // Text color via inline style to ensure contrast (overrides Tailwind inherit)
+      expect(btn.style.color).toBe("var(--color-text-on-primary)");
     });
 
     it("renders secondary variant", () => {
@@ -89,13 +91,13 @@ describe("Button", () => {
     it("defaults to md size", () => {
       render(<Button>Medium</Button>);
       const btn = screen.getByRole("button");
-      expect(btn.className).toContain("min-h-[40px]");
+      expect(btn.className).toContain("min-h-[44px]");
     });
 
     it("renders sm size", () => {
       render(<Button size="sm">Small</Button>);
       const btn = screen.getByRole("button");
-      expect(btn.className).toContain("min-h-[32px]");
+      expect(btn.className).toContain("min-h-[44px]");
     });
 
     it("renders lg size", () => {
@@ -304,6 +306,35 @@ describe("Button", () => {
       expect(btn).toBeDisabled();
       expect(btn).toHaveAttribute("aria-busy", "true");
       expect(btn).toHaveAttribute("aria-disabled", "true");
+    });
+
+    it("onKeyDown is not overridden by rest props", () => {
+      const handler = vi.fn();
+      render(
+        <Button onKeyDown={handler} data-custom="test">
+          KeyTest
+        </Button>
+      );
+      fireEvent.keyDown(screen.getByRole("button"), {
+        key: "a",
+        code: "KeyA",
+      });
+      expect(handler).toHaveBeenCalledTimes(1);
+    });
+
+    it("onKeyDown prevents default for disabled + Enter", () => {
+      const handler = vi.fn();
+      render(
+        <Button disabled onKeyDown={handler}>
+          Disabled
+        </Button>
+      );
+      fireEvent.keyDown(screen.getByRole("button"), {
+        key: "Enter",
+        code: "Enter",
+      });
+      // onKeyDown from props should NOT be called when disabled
+      expect(handler).not.toHaveBeenCalled();
     });
 
     it("focus-visible outline is configured", () => {

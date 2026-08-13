@@ -21,7 +21,6 @@ function cn(...classes: (string | undefined | false)[]): string {
 const variantStyles: Record<ButtonVariant, string> = {
   primary: cn(
     "bg-[var(--color-brand-primary)]",
-    "text-[var(--color-background-primary)]",
     "border-transparent",
     "hover:bg-[var(--color-brand-primary-dark)]",
     "active:bg-[var(--color-brand-primary-dark)]"
@@ -38,7 +37,6 @@ const variantStyles: Record<ButtonVariant, string> = {
     "text-[var(--color-brand-primary)]",
     "border-[var(--color-brand-primary)]",
     "hover:bg-[var(--color-brand-primary)]",
-    "hover:text-[var(--color-background-primary)]",
     "active:bg-[var(--color-brand-primary-dark)]",
     "active:text-[var(--color-background-primary)]"
   ),
@@ -56,13 +54,13 @@ const sizeStyles: Record<ButtonSize, string> = {
     "px-[var(--spacing-3)]",
     "py-[var(--spacing-1)]",
     "text-[var(--font-size-sm)]",
-    "min-h-[32px]"
+    "min-h-[44px]"
   ),
   md: cn(
     "px-[var(--spacing-4)]",
     "py-[var(--spacing-2)]",
     "text-[var(--font-size-base)]",
-    "min-h-[40px]"
+    "min-h-[44px]"
   ),
   lg: cn(
     "px-[var(--spacing-6)]",
@@ -90,6 +88,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       children,
       onClick,
+      onKeyDown,
+      style,
       ...rest
     },
     ref
@@ -109,8 +109,25 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         e.preventDefault();
         return;
       }
-      rest.onKeyDown?.(e);
+      onKeyDown?.(e);
     };
+
+    // Primary variant: use inline style for text color to avoid
+    // Tailwind's button { color: inherit } + body color override.
+    // Uses --color-text-on-primary token which provides ≥ 4.5:1 contrast
+    // against --color-brand-primary in both themes:
+    //   Light: #202124 on #4285F4 = 4.52:1
+    //   Dark:  #0A0A0A on #D4AF37 = 9.42:1
+    const primaryTextStyle: React.CSSProperties | undefined =
+      variant === "primary"
+        ? { color: "var(--color-text-on-primary)" }
+        : undefined;
+
+    // Outline hover: text switches to background-primary on hover
+    const outlineHoverStyle: React.CSSProperties | undefined =
+      variant === "outline"
+        ? { ["--outline-hover-color" as string]: "var(--color-background-primary)" }
+        : undefined;
 
     return (
       <button
@@ -121,6 +138,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={loading || undefined}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
+        style={{ ...primaryTextStyle, ...outlineHoverStyle, ...style }}
         className={cn(
           // Base styles
           "inline-flex items-center justify-center",
@@ -148,7 +166,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           fullWidth && "w-full",
           // Disabled
           isDisabled && "opacity-50 cursor-not-allowed",
-          // Loading — keep pointer-events-none on the inner spinner only
+          // Loading
           loading && "relative",
           className
         )}

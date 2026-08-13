@@ -52,6 +52,11 @@
         "$value": "#666666",
         "$type": "color",
         "$description": "禁用状态文字"
+      },
+      "on-primary": {
+        "$value": "#0A0A0A",
+        "$type": "color",
+        "$description": "Primary 按钮文字 — 深色在金底上"
       }
     },
     "border": {
