@@ -21,12 +21,12 @@ master (desktop-dark)
 |--------|-----------|-----------------|-----------|---------|
 | Desktop Dark (master) | `1631f118e576480fb8a4032e0cc655e7` | 1440×900 | 84,869 bytes | `9032c1f2cfcb5b1cb7b3039e1e4c25795bc699ba22932928a06183205ddf612b` |
 | Desktop Light | `15cedf97c5cb453d836c46786f4ae1b8` | 1440×900 | 79,053 bytes | `e13c5ad0f571a4ecb956a90855d36b54bd3852bd6fe4ef545f89f326a534199e` |
-| Mobile Dark | `ae0020684d4943e5adb923d24094198d` | 375×812 | 48,006 bytes | `ddad0fbaa755530828d155ecbf117285b134aeafc6646283855ca4000e56129f` |
+| Mobile Dark | `ae0020684d4943e5adb923d24094198d` | 375×812 | 36,334 bytes | `76b570f29cb3d5d01e58ba9b5b5b6c2625f990a0c21d1aff2aeb0384b0a71582` |
 | Mobile Light | `413d505d16ab4b8cb4010186c0dceb48` | 375×812 | 37,571 bytes | `3a45465a04c3b161476a6137c56d290210d25c1f53f1042ff40cb3d65d6ab44f` |
 
 ## Image Export Method
 
-Stitch SDK `getImage()` returns a Google FIFE URL. The raw URL serves a thumbnail (~191×512). Appending `=s0` to the URL returns the full-resolution image (2560×6860 for desktop, 780×3540+ for mobile). The full-res images were downloaded, scaled to target viewport width, and center-cropped to target height using Pillow/LANCZOS resampling.
+Stitch SDK `getImage()` returns a Google FIFE URL. The raw URL serves a thumbnail (~191×512). Appending `=s0` to the URL returns the full-resolution image (2560×6860 for desktop, 780×3540+ for mobile). The full-res images were downloaded, scaled to target viewport width, and top-cropped to target height using Pillow/LANCZOS resampling. Mobile screenshots use top-crop (starting from page header) to ensure Dark/Light alignment for visual comparison.
 
 Mobile dark was derived from the approved mobile-light screen via `edit()` with a dark-mode color-only prompt, ensuring identical layout, section order, and content structure.
 
