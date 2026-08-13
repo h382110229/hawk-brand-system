@@ -37,8 +37,9 @@ const variantStyles: Record<ButtonVariant, string> = {
     "text-[var(--color-brand-primary)]",
     "border-[var(--color-brand-primary)]",
     "hover:bg-[var(--color-brand-primary)]",
+    "hover:text-[var(--color-text-on-primary)]",
     "active:bg-[var(--color-brand-primary-dark)]",
-    "active:text-[var(--color-background-primary)]"
+    "active:text-[var(--color-text-on-primary)]"
   ),
   ghost: cn(
     "bg-transparent",
@@ -123,12 +124,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ? { color: "var(--color-text-on-primary)" }
         : undefined;
 
-    // Outline hover: text switches to background-primary on hover
-    const outlineHoverStyle: React.CSSProperties | undefined =
-      variant === "outline"
-        ? { ["--outline-hover-color" as string]: "var(--color-background-primary)" }
-        : undefined;
-
     return (
       <button
         ref={ref}
@@ -138,7 +133,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={loading || undefined}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
-        style={{ ...primaryTextStyle, ...outlineHoverStyle, ...style }}
+        style={{ ...primaryTextStyle, ...style }}
         className={cn(
           // Base styles
           "inline-flex items-center justify-center",
