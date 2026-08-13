@@ -11,8 +11,8 @@ Style: Black background #0A0A0A with restrained gold #D4AF37 accent. Left-aligne
 ```
 master (desktop-dark)
 ├── desktop-light (edit: light mode colors only)
-├── mobile-dark (edit: responsive reflow, keep dark)
-└── mobile-light (from desktop-light, edit: responsive reflow)
+├── mobile-light (from desktop-light, edit: responsive reflow)
+└── mobile-dark (from mobile-light, edit: dark colors only — structure unchanged)
 ```
 
 ## Screens
@@ -21,12 +21,14 @@ master (desktop-dark)
 |--------|-----------|-----------------|-----------|---------|
 | Desktop Dark (master) | `1631f118e576480fb8a4032e0cc655e7` | 1440×900 | 84,869 bytes | `9032c1f2cfcb5b1cb7b3039e1e4c25795bc699ba22932928a06183205ddf612b` |
 | Desktop Light | `15cedf97c5cb453d836c46786f4ae1b8` | 1440×900 | 79,053 bytes | `e13c5ad0f571a4ecb956a90855d36b54bd3852bd6fe4ef545f89f326a534199e` |
-| Mobile Dark | `32ef208882a546e6a0d9aa9849a0d117` | 375×812 | 67,020 bytes | `24d1f49719da9f548c672d6ae70bdde6d10ce11bda6f3b5e17654dddc5c0f3de` |
+| Mobile Dark | `ae0020684d4943e5adb923d24094198d` | 375×812 | 48,006 bytes | `ddad0fbaa755530828d155ecbf117285b134aeafc6646283855ca4000e56129f` |
 | Mobile Light | `413d505d16ab4b8cb4010186c0dceb48` | 375×812 | 37,571 bytes | `3a45465a04c3b161476a6137c56d290210d25c1f53f1042ff40cb3d65d6ab44f` |
 
 ## Image Export Method
 
-Stitch SDK `getImage()` returns a Google FIFE URL. The raw URL serves a thumbnail (~191×512). Appending `=s0` to the URL returns the full-resolution image (2560×6860 for desktop, 780×3540 for mobile). The full-res images were downloaded, scaled to target viewport width, and top-cropped to target height using Pillow/LANCZOS resampling.
+Stitch SDK `getImage()` returns a Google FIFE URL. The raw URL serves a thumbnail (~191×512). Appending `=s0` to the URL returns the full-resolution image (2560×6860 for desktop, 780×3540+ for mobile). The full-res images were downloaded, scaled to target viewport width, and center-cropped to target height using Pillow/LANCZOS resampling.
+
+Mobile dark was derived from the approved mobile-light screen via `edit()` with a dark-mode color-only prompt, ensuring identical layout, section order, and content structure.
 
 ## Prompt
 
@@ -50,6 +52,7 @@ Stitch uses a blank rectangular placeholder marked "ROUND 6 LOGO SLOT". Engineer
 - [x] No redrawn or fake logos (placeholder used)
 - [x] Only HAWK brand colors (Dark: #0A0A0A/#D4AF37, Light: #FFFFFF/#4285F4)
 - [x] Dark/Light content structure is consistent
+- [x] Mobile dark derives from mobile-light (colors only, structure unchanged)
 - [x] Mobile is responsive version of Desktop
 - [x] Typography hierarchy is consistent
 - [x] No neon, metallic, 3D, excessive gradients
