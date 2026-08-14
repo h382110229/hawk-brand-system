@@ -72,6 +72,11 @@
         "$value": "#202124",
         "$type": "color",
         "$description": "Primary 按钮文字 — 深色在蓝底上"
+      },
+      "error": {
+        "$value": "#C62828",
+        "$type": "color",
+        "$description": "Error text — accessible contrast on primary background"
       }
     },
     "border": {

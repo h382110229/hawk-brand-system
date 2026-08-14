@@ -102,6 +102,11 @@ export const COLORS_DARK: ColorToken[] = [
     "desc": "Primary 按钮文字 — 深色在金底上"
   },
   {
+    "name": "text.error",
+    "hex": "#EA4335",
+    "desc": "Error text — accessible contrast on primary background"
+  },
+  {
     "name": "border.default",
     "hex": "#2A2A2A",
     "desc": "默认边框"
@@ -198,6 +203,11 @@ export const COLORS_LIGHT: ColorToken[] = [
     "name": "text.on-primary",
     "hex": "#202124",
     "desc": "Primary 按钮文字 — 深色在蓝底上"
+  },
+  {
+    "name": "text.error",
+    "hex": "#C62828",
+    "desc": "Error text — accessible contrast on primary background"
   },
   {
     "name": "border.default",

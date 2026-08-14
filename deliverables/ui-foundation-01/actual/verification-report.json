@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T05:02:21.622Z",
+  "timestamp": "2026-08-13T07:16:44.718Z",
   "allPass": true,
   "results": [
     {
@@ -16,7 +16,7 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "aa12a16f05fec043",
+      "screenshotHash": "4bfd80f58c88153d",
       "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-dark.png",
       "pass": true,
       "failureReasons": []
@@ -35,7 +35,7 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "463399c7329cd05a",
+      "screenshotHash": "81a1614f0a62775d",
       "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-light.png",
       "pass": true,
       "failureReasons": []
@@ -54,7 +54,7 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "9085fa52f749f7ce",
+      "screenshotHash": "1cb448772138b01e",
       "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-dark.png",
       "pass": true,
       "failureReasons": []
@@ -73,7 +73,7 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "11339cc975c4e8a9",
+      "screenshotHash": "ead02208e11fb848",
       "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-light.png",
       "pass": true,
       "failureReasons": []
@@ -92,7 +92,7 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "b49ba3322c62b868",
+      "screenshotHash": "9062a4526ca9cf82",
       "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-dark.png",
       "pass": true,
       "failureReasons": []
@@ -111,7 +111,7 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "fdd071ab2444b689",
+      "screenshotHash": "0e0e4d8c024ab5a1",
       "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-light.png",
       "pass": true,
       "failureReasons": []
