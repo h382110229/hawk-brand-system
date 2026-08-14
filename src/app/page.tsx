@@ -4,6 +4,7 @@ import { HawkLogo } from "@/components/HawkLogo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
+import { Card } from "@/components/Card";
 import { useTheme } from "@/components/ThemeProvider";
 import {
   COLORS_DARK,
@@ -51,7 +52,7 @@ export default function Home() {
           </span>
         </div>
         <nav className="flex gap-3 sm:gap-6 items-center flex-wrap">
-          {["Logo", "Color", "Typography", "Tokens", "Components", "Input"].map((item) => (
+          {["Logo", "Color", "Typography", "Tokens", "Components", "Input", "Card"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -502,13 +503,132 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Card */}
+        <section id="card" className="pt-16">
+          <SectionHeader
+            id="card-heading"
+            title="Card"
+            subtitle="Container component for grouping related content"
+          />
+
+          {/* Card Variants */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Card Variants
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card variant="elevated">
+                <p className="text-[var(--color-text-primary)]">
+                  <strong>Elevated</strong> — Default variant with subtle shadow
+                  for depth hierarchy.
+                </p>
+              </Card>
+              <Card variant="outlined">
+                <p className="text-[var(--color-text-primary)]">
+                  <strong>Outlined</strong> — Border-only variant with no shadow
+                  for flatter layouts.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Card Padding */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Card Padding
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card padding="md">
+                <p className="text-[var(--color-text-primary)]">
+                  <strong>Medium padding</strong> — 16px internal spacing for
+                  compact layouts.
+                </p>
+              </Card>
+              <Card padding="lg">
+                <p className="text-[var(--color-text-primary)]">
+                  <strong>Large padding</strong> — 24px internal spacing for
+                  comfortable reading.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Card with Header and Footer */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Card Composition
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card
+                header={
+                  <h4 className="text-[var(--font-size-lg)] font-[var(--font-weight-semibold)] text-[var(--color-text-primary)]">
+                    Project Alpha
+                  </h4>
+                }
+                footer={
+                  <div className="flex gap-3">
+                    <Button size="sm" variant="primary">View</Button>
+                    <Button size="sm" variant="ghost">Dismiss</Button>
+                  </div>
+                }
+              >
+                <p className="text-[var(--color-text-secondary)]">
+                  A demonstration of Card with header, content, and footer
+                  composition slots working together.
+                </p>
+              </Card>
+              <Card
+                variant="outlined"
+                header={
+                  <h4 className="text-[var(--font-size-lg)] font-[var(--font-weight-semibold)] text-[var(--color-text-primary)]">
+                    System Status
+                  </h4>
+                }
+              >
+                <p className="text-[var(--color-text-secondary)]">
+                  Outlined variant with header only. Footer is optional — Card
+                  adapts to the content structure you provide.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Card Grid */}
+          <div className="mb-12">
+            <h3 className="mb-6 text-[var(--font-size-2xl)]">
+              Card Grid
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "Engineering", desc: "Infrastructure, CI/CD, and deployment pipelines." },
+                { title: "Design", desc: "Brand identity, tokens, and visual systems." },
+                { title: "Research", desc: "Exploration, prototyping, and validation." },
+              ].map((item) => (
+                <Card
+                  key={item.title}
+                  padding="md"
+                  header={
+                    <h4 className="text-[var(--font-size-base)] font-[var(--font-weight-semibold)] text-[var(--color-text-primary)]">
+                      {item.title}
+                    </h4>
+                  }
+                >
+                  <p className="text-[var(--color-text-secondary)] text-[var(--font-size-sm)]">
+                    {item.desc}
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
       <footer
         className="text-center py-8 border-t border-[var(--color-border-default)] text-[var(--color-text-secondary)] text-[var(--font-size-sm)]"
       >
-        HAWK Brand System · Gate HAWK-UI-Component-02B
+        HAWK Brand System · Gate HAWK-UI-Component-03
       </footer>
     </div>
   );

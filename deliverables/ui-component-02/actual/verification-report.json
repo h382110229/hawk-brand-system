@@ -1,7 +1,7 @@
 {
   "gate": "HAWK-UI-Component-02 Round 1 (Remediation)",
   "baseSha": "afe9ee4658e316412e7123dc3b99293921b8029b",
-  "headSha": "05ade8e2bad8716dd5985d06dd7cf0d3584201fa",
+  "headSha": "c13a9b8917e1fa62cd555d5d5ee9c5bc685ac36a",
   "viewports": [
     {
       "name": "desktop",
@@ -75,7 +75,7 @@
       },
       "screenshot": {
         "file": "desktop-dark.png",
-        "sha256": "a051e127ab86d77173946ba6131cec84e4e27061be92920326f353ca4e1aa40c"
+        "sha256": "3ad42a3df3c6b4eb16b634d678d31b983842b41ae62f8b017f0def8c4ae3288f"
       },
       "pass": true,
       "failureReasons": []
@@ -130,7 +130,7 @@
       },
       "screenshot": {
         "file": "desktop-light.png",
-        "sha256": "a7d19f61aa2a1fcffca7ec1466816b9a1b10d349a5b795cb2b17e97f98a317cb"
+        "sha256": "884a013c346e8714e23135561a0b59800ed036c483ecf9b80bf162ed3b068008"
       },
       "pass": true,
       "failureReasons": []
@@ -185,7 +185,7 @@
       },
       "screenshot": {
         "file": "tablet-dark.png",
-        "sha256": "a81781d3b226fd9174a3c36e39836d541c1eb464acc92a16891a6f8648af674a"
+        "sha256": "fd3762af8f82c959e80d1b8a774cecfa8b89463463960d27edd262e1f29167c3"
       },
       "pass": true,
       "failureReasons": []
@@ -240,7 +240,7 @@
       },
       "screenshot": {
         "file": "tablet-light.png",
-        "sha256": "c5996c1f113dac37040d6c233025a509b97843c0c77fd6d5266499d3c2a944b3"
+        "sha256": "ebee5d39c7ea4142ed4e41671653e89c32412bee8e30a5e412f1b3993fdf73ab"
       },
       "pass": true,
       "failureReasons": []

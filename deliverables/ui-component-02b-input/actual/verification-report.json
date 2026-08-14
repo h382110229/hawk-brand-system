@@ -1,7 +1,7 @@
 {
   "gate": "HAWK-UI-Component-02B Input Round 1",
   "baseSha": "24d8cdb3c6c96d240ca63ed7444f91e0defaaa17",
-  "headSha": "66873b83c6dd341a734187c893ce54110fdfcfd8",
+  "headSha": "c13a9b8917e1fa62cd555d5d5ee9c5bc685ac36a",
   "viewports": [
     {
       "name": "desktop",

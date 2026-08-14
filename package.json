@@ -15,7 +15,8 @@
     "browser:verify": "node --experimental-strip-types --no-warnings scripts/browser-verify.mts",
     "screenshots:actual": "node --experimental-strip-types --no-warnings scripts/browser-verify.mts",
     "component-02:browser-verify": "node --experimental-strip-types --no-warnings scripts/component-02-browser-verify.mts",
-    "component-02b:browser-verify": "node --experimental-strip-types --no-warnings scripts/component-02b-browser-verify.mts"
+    "component-02b:browser-verify": "node --experimental-strip-types --no-warnings scripts/component-02b-browser-verify.mts",
+    "component-03:browser-verify": "node --experimental-strip-types --no-warnings scripts/component-03-browser-verify.mts"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

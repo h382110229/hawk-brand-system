@@ -1,0 +1,444 @@
+{
+  "gate": "HAWK-UI-Component-03 Card Round 1",
+  "baseSha": "6b7ee66d893a3f64ec2e1948b360013cc1bac4c0",
+  "headSha": "c13a9b8917e1fa62cd555d5d5ee9c5bc685ac36a",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "themeColorDifference": true,
+  "results": [
+    {
+      "viewport": "desktop",
+      "theme": "dark",
+      "visibility": {
+        "articles": true,
+        "elevated": true,
+        "outlined": true,
+        "header": true,
+        "footer": true,
+        "grid": true
+      },
+      "computedStyles": [
+        {
+          "label": "Elevated",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Outlined",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Medium padding",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Large padding",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        }
+      ],
+      "contrast": {
+        "textRatio": 15.31,
+        "textPass": true
+      },
+      "semantics": {
+        "article": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "a11y": {
+        "reducedMotion": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "desktop-dark.png",
+        "sha256": "8b29726750c014ed6b6251979db82f887736ccbb4b715d6d884e02f759eabca9"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "desktop",
+      "theme": "light",
+      "visibility": {
+        "articles": true,
+        "elevated": true,
+        "outlined": true,
+        "header": true,
+        "footer": true,
+        "grid": true
+      },
+      "computedStyles": [
+        {
+          "label": "Elevated",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Outlined",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Medium padding",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Large padding",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        }
+      ],
+      "contrast": {
+        "textRatio": 15.27,
+        "textPass": true
+      },
+      "semantics": {
+        "article": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "a11y": {
+        "reducedMotion": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "desktop-light.png",
+        "sha256": "8599d330084d6031bfba485f79f2e9bde88bc9c89f42b52417d01b4b5b216ba8"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "dark",
+      "visibility": {
+        "articles": true,
+        "elevated": true,
+        "outlined": true,
+        "header": true,
+        "footer": true,
+        "grid": true
+      },
+      "computedStyles": [
+        {
+          "label": "Elevated",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Outlined",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Medium padding",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Large padding",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        }
+      ],
+      "contrast": {
+        "textRatio": 15.31,
+        "textPass": true
+      },
+      "semantics": {
+        "article": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "a11y": {
+        "reducedMotion": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "tablet-dark.png",
+        "sha256": "1ab5da6516da2792e3440f11d52b2afa25f1d8284ff96eb6afda687948596522"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "tablet",
+      "theme": "light",
+      "visibility": {
+        "articles": true,
+        "elevated": true,
+        "outlined": true,
+        "header": true,
+        "footer": true,
+        "grid": true
+      },
+      "computedStyles": [
+        {
+          "label": "Elevated",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Outlined",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Medium padding",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Large padding",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        }
+      ],
+      "contrast": {
+        "textRatio": 15.27,
+        "textPass": true
+      },
+      "semantics": {
+        "article": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "a11y": {
+        "reducedMotion": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "tablet-light.png",
+        "sha256": "c3b77f06d01cf4362b76f1e4bcce2089766376c01935ace68a96809c6364c17a"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "dark",
+      "visibility": {
+        "articles": true,
+        "elevated": true,
+        "outlined": true,
+        "header": true,
+        "footer": true,
+        "grid": true
+      },
+      "computedStyles": [
+        {
+          "label": "Elevated",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Outlined",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Medium padding",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Large padding",
+          "bg": "rgb(20, 20, 20)",
+          "border": "rgb(42, 42, 42)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        }
+      ],
+      "contrast": {
+        "textRatio": 15.31,
+        "textPass": true
+      },
+      "semantics": {
+        "article": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "a11y": {
+        "reducedMotion": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "mobile-dark.png",
+        "sha256": "d943b4591cb5c19868ec38ab78a8fceb8b53cedc047f29563cdc26b70a98e569"
+      },
+      "pass": true,
+      "failureReasons": []
+    },
+    {
+      "viewport": "mobile",
+      "theme": "light",
+      "visibility": {
+        "articles": true,
+        "elevated": true,
+        "outlined": true,
+        "header": true,
+        "footer": true,
+        "grid": true
+      },
+      "computedStyles": [
+        {
+          "label": "Elevated",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Outlined",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Medium padding",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        },
+        {
+          "label": "Large padding",
+          "bg": "rgb(248, 249, 250)",
+          "border": "rgb(218, 220, 224)",
+          "radius": "16px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px",
+          "padding": "0px"
+        }
+      ],
+      "contrast": {
+        "textRatio": 15.27,
+        "textPass": true
+      },
+      "semantics": {
+        "article": true
+      },
+      "layout": {
+        "overflow": false
+      },
+      "a11y": {
+        "reducedMotion": true
+      },
+      "errors": {
+        "console": [],
+        "page": []
+      },
+      "screenshot": {
+        "file": "mobile-light.png",
+        "sha256": "003b6d006361c5053e8e0f9ca18c37371de77375b91e439f783ed30abd192cb2"
+      },
+      "pass": true,
+      "failureReasons": []
+    }
+  ],
+  "overall": "PASS"
+}

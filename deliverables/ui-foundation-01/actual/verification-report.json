@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T07:16:44.718Z",
+  "timestamp": "2026-08-14T06:17:34.859Z",
   "allPass": true,
   "results": [
     {
@@ -16,8 +16,8 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "4bfd80f58c88153d",
-      "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-dark.png",
+      "screenshotHash": "b8cc5bc8a9632dfc",
+      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-dark.png",
       "pass": true,
       "failureReasons": []
     },
@@ -35,8 +35,8 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "81a1614f0a62775d",
-      "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-light.png",
+      "screenshotHash": "4daf330b07fe2a65",
+      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-light.png",
       "pass": true,
       "failureReasons": []
     },
@@ -54,8 +54,8 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "1cb448772138b01e",
-      "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-dark.png",
+      "screenshotHash": "7d2823373e110c66",
+      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-dark.png",
       "pass": true,
       "failureReasons": []
     },
@@ -73,8 +73,8 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "ead02208e11fb848",
-      "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-light.png",
+      "screenshotHash": "17c8d3bf4513df0b",
+      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-light.png",
       "pass": true,
       "failureReasons": []
     },
@@ -92,8 +92,8 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "9062a4526ca9cf82",
-      "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-dark.png",
+      "screenshotHash": "151b8427050db086",
+      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-dark.png",
       "pass": true,
       "failureReasons": []
     },
@@ -111,8 +111,8 @@
       "consoleErrors": [],
       "pageErrors": [],
       "horizontalOverflow": false,
-      "screenshotHash": "0e0e4d8c024ab5a1",
-      "screenshotPath": "/Users/huoke/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-light.png",
+      "screenshotHash": "6fc1e15958c67728",
+      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-light.png",
       "pass": true,
       "failureReasons": []
     }
