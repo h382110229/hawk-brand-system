@@ -1,7 +1,7 @@
 {
   "gate": "HAWK-UI-Component-03 Card Round 1",
   "baseSha": "6b7ee66d893a3f64ec2e1948b360013cc1bac4c0",
-  "headSha": "6b7ee66d893a3f64ec2e1948b360013cc1bac4c0",
+  "headSha": "c13a9b8917e1fa62cd555d5d5ee9c5bc685ac36a",
   "viewports": [
     {
       "name": "desktop",
