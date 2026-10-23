@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T06:17:34.859Z",
+  "timestamp": "2026-10-23T09:14:05.977Z",
   "allPass": true,
   "results": [
     {
@@ -17,7 +17,7 @@
       "pageErrors": [],
       "horizontalOverflow": false,
       "screenshotHash": "b8cc5bc8a9632dfc",
-      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-dark.png",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-dark.png",
       "pass": true,
       "failureReasons": []
     },
@@ -36,7 +36,7 @@
       "pageErrors": [],
       "horizontalOverflow": false,
       "screenshotHash": "4daf330b07fe2a65",
-      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-light.png",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/desktop-light.png",
       "pass": true,
       "failureReasons": []
     },
@@ -55,7 +55,7 @@
       "pageErrors": [],
       "horizontalOverflow": false,
       "screenshotHash": "7d2823373e110c66",
-      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-dark.png",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-dark.png",
       "pass": true,
       "failureReasons": []
     },
@@ -74,7 +74,7 @@
       "pageErrors": [],
       "horizontalOverflow": false,
       "screenshotHash": "17c8d3bf4513df0b",
-      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-light.png",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/tablet-light.png",
       "pass": true,
       "failureReasons": []
     },
@@ -93,7 +93,7 @@
       "pageErrors": [],
       "horizontalOverflow": false,
       "screenshotHash": "151b8427050db086",
-      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-dark.png",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-dark.png",
       "pass": true,
       "failureReasons": []
     },
@@ -112,7 +112,7 @@
       "pageErrors": [],
       "horizontalOverflow": false,
       "screenshotHash": "6fc1e15958c67728",
-      "screenshotPath": "/private/tmp/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-light.png",
+      "screenshotPath": "/Users/huoke/Projects/hawk-brand-system/deliverables/ui-foundation-01/actual/mobile-light.png",
       "pass": true,
       "failureReasons": []
     }

@@ -1,7 +1,7 @@
 {
   "gate": "HAWK-UI-Component-02 Round 1 (Remediation)",
   "baseSha": "afe9ee4658e316412e7123dc3b99293921b8029b",
-  "headSha": "c13a9b8917e1fa62cd555d5d5ee9c5bc685ac36a",
+  "headSha": "f82332d0175fd0abaaebb84c4dc47e78c68fb259",
   "viewports": [
     {
       "name": "desktop",
